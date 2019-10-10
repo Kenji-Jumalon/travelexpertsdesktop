@@ -6,6 +6,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -25,6 +27,9 @@ public class Controller {
 
     @FXML
     private Button btnCustomer;
+
+    @FXML
+    private ImageView exit;
 
     @FXML
     void agentOnBtnAction(ActionEvent event) throws IOException {
@@ -51,6 +56,12 @@ public class Controller {
             e.printStackTrace();
         }
     }
+
+    @FXML
+    void onClickExit(MouseEvent event) {
+        System.exit(0);
+    }
+
 
     @FXML
     void initialize() {
