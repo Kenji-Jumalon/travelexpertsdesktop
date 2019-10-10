@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: #e0e0e0;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
+   <children>
+      <AnchorPane layoutX="10.0" layoutY="25.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="200.0" style="-fx-background-color: #607d8b; -fx-background-radius: 5;">
+         <children>
+            <Button fx:id="btnAgent" layoutX="25.0" layoutY="25.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#agentOnBtnAction" prefHeight="30.0" prefWidth="150.0" text="Agent">
+               <font>
+                  <Font size="14.0" />
+               </font></Button>
+            <Button fx:id="btnCustomer" layoutX="25.0" layoutY="75.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#custOnBtnAction" prefHeight="30.0" prefWidth="150.0" text="Customer" AnchorPane.rightAnchor="25.0">
+               <font>
+                  <Font size="14.0" />
+               </font></Button>
+            <Button layoutX="25.0" layoutY="125.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="30.0" prefWidth="150.0" text="Packages" AnchorPane.rightAnchor="25.0">
+               <font>
+                  <Font size="14.0" />
+               </font></Button>
+            <Button layoutX="25.0" layoutY="175.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="30.0" prefWidth="150.0" text="Bookings Details">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button layoutX="25.0" layoutY="225.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="30.0" prefWidth="150.0" text="Btn">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="216.0" layoutY="25.0" prefHeight="550.0" prefWidth="770.0" style="-fx-background-color: #607d8b; -fx-background-radius: 5;">
+         <children>
+            <Label contentDisplay="RIGHT" layoutX="205.0" layoutY="27.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: white; -fx-background-radius: 5px;" text="Total">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label contentDisplay="RIGHT" layoutX="205.0" layoutY="113.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: white; -fx-background-radius: 5px;" text="Total">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label contentDisplay="RIGHT" layoutX="205.0" layoutY="194.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: white; -fx-background-radius: 5px;" text="Total">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label contentDisplay="RIGHT" layoutX="205.0" layoutY="275.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: white; -fx-background-radius: 5px;" text="Total">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextField layoutX="415.0" layoutY="26.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" style="-fx-background-radius: 5px;" />
+            <TextField layoutX="415.0" layoutY="110.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" style="-fx-background-radius: 5px;" />
+            <TextField layoutX="415.0" layoutY="191.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" style="-fx-background-radius: 5px;" />
+            <TextField layoutX="415.0" layoutY="275.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="150.0" style="-fx-background-radius: 5px;" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.AgentsController">
+   <children>
+      <TableView fx:id="tblAgents" layoutX="10.0" layoutY="25.0" prefHeight="550.0" prefWidth="980.0" style="-fx-background-color: #607d8b;">
+        <columns>
+          <TableColumn fx:id="colAgentId" prefWidth="59.0" text="AgentId" />
+          <TableColumn fx:id="colAgtFirstName" prefWidth="121.0" text="AgtFirstName" />
+            <TableColumn fx:id="colAgtMiddleInitial" prefWidth="128.0" text="AgtMiddleInitial" />
+            <TableColumn fx:id="colAgtLastName" prefWidth="118.0" text="AgtLastName" />
+            <TableColumn fx:id="colAgtBusPhone" prefWidth="132.0" text="AgtBusPhone" />
+            <TableColumn fx:id="colAgtEmail" prefWidth="148.0" text="AgtEmail" />
+            <TableColumn fx:id="colAgtPosition" prefWidth="163.0" text="AgtPosition" />
+            <TableColumn fx:id="colAgencyId" prefWidth="110.0" text="AgencyId" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
