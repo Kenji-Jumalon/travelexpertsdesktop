@@ -14,9 +14,9 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
         this.stg = primaryStage;
-        Parent root = FXMLLoader.load(getClass().getResource("main.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("../controller/main.fxml"));
         //primaryStage.setTitle("");
-        stg.setScene(new Scene(root, 800, 600));
+        stg.setScene(new Scene(root, 1000, 600));
         stg.initStyle(StageStyle.UNDECORATED);
 
         //make window draggable

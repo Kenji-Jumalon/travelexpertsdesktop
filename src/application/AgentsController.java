@@ -2,10 +2,11 @@ package application;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 import model.Agent;
 
 import java.net.URL;
@@ -54,6 +55,60 @@ public class AgentsController {
     private URL location;
 
     @FXML
+    private Label lblId;
+
+    @FXML
+    private Label lblFistName;
+
+    @FXML
+    private Label lblMidInitial;
+
+    @FXML
+    private Label lblLastName;
+
+    @FXML
+    private Label lblBusPhone;
+
+    @FXML
+    private Label lblEmail;
+
+    @FXML
+    private Label lblPosition;
+
+    @FXML
+    private Label lblAgencyId;
+
+    @FXML
+    private TextField tfAgentId;
+
+    @FXML
+    private TextField tfFirstName;
+
+    @FXML
+    private TextField tfMidInitial;
+
+    @FXML
+    private TextField tfLastName;
+
+    @FXML
+    private TextField tfBusPhone;
+
+    @FXML
+    private TextField tfEmail;
+
+    @FXML
+    private TextField tfPosition;
+
+    @FXML
+    private TextField tfAgencyId;
+
+    @FXML
+    private Button btnEdit;
+
+    @FXML
+    private Button btnSave;
+
+    @FXML
     void initialize() throws SQLException {
         assert tblAgents != null : "fx:id=\"tblAgents\" was not injected: check your FXML file 'Agents.fxml'.";
         assert colAgentId != null : "fx:id=\"colAgentId\" was not injected: check your FXML file 'Agents.fxml'.";
@@ -64,6 +119,26 @@ public class AgentsController {
         assert colAgtEmail != null : "fx:id=\"colAgtEmail\" was not injected: check your FXML file 'Agents.fxml'.";
         assert colAgtPosition != null : "fx:id=\"colAgtPosition\" was not injected: check your FXML file 'Agents.fxml'.";
         assert colAgencyId != null : "fx:id=\"colAgencyId\" was not injected: check your FXML file 'Agents.fxml'.";
+        assert lblId != null : "fx:id=\"lblId\" was not injected: check your FXML file 'Agents.fxml'.";
+        assert lblFistName != null : "fx:id=\"lblFistName\" was not injected: check your FXML file 'Agents.fxml'.";
+        assert lblMidInitial != null : "fx:id=\"lblMidInitial\" was not injected: check your FXML file 'Agents.fxml'.";
+        assert lblLastName != null : "fx:id=\"lblLastName\" was not injected: check your FXML file 'Agents.fxml'.";
+        assert lblBusPhone != null : "fx:id=\"lblBusPhone\" was not injected: check your FXML file 'Agents.fxml'.";
+        assert lblEmail != null : "fx:id=\"lblEmail\" was not injected: check your FXML file 'Agents.fxml'.";
+        assert lblPosition != null : "fx:id=\"lblPosition\" was not injected: check your FXML file 'Agents.fxml'.";
+        assert lblAgencyId != null : "fx:id=\"lblAgencyId\" was not injected: check your FXML file 'Agents.fxml'.";
+        assert tfAgentId != null : "fx:id=\"tfAgentId\" was not injected: check your FXML file 'Agents.fxml'.";
+        assert tfFirstName != null : "fx:id=\"tfFirstName\" was not injected: check your FXML file 'Agents.fxml'.";
+        assert tfMidInitial != null : "fx:id=\"tfMidInitial\" was not injected: check your FXML file 'Agents.fxml'.";
+        assert tfLastName != null : "fx:id=\"tfLastName\" was not injected: check your FXML file 'Agents.fxml'.";
+        assert tfBusPhone != null : "fx:id=\"tfBusPhone\" was not injected: check your FXML file 'Agents.fxml'.";
+        assert tfEmail != null : "fx:id=\"tfEmail\" was not injected: check your FXML file 'Agents.fxml'.";
+        assert tfPosition != null : "fx:id=\"tfPosition\" was not injected: check your FXML file 'Agents.fxml'.";
+        assert tfAgencyId != null : "fx:id=\"tfAgencyId\" was not injected: check your FXML file 'Agents.fxml'.";
+        assert btnEdit != null : "fx:id=\"btnEdit\" was not injected: check your FXML file 'Agents.fxml'.";
+        assert btnSave != null : "fx:id=\"btnSave\" was not injected: check your FXML file 'Agents.fxml'.";
+
+
 
 //        ObservableList<Agent> agents = FXCollections.observableArrayList();
         colAgentId.setCellValueFactory(new PropertyValueFactory<Agent, Integer>("agentId"));
@@ -88,6 +163,29 @@ public class AgentsController {
         ObservableList<Agent> agents = FXCollections.observableArrayList(agentsArrayList);
         tblAgents.setItems(agents);
         conn.close();
+    }
+
+    @FXML
+    void onAgentSelect(MouseEvent event) {
+    Agent agent=tblAgents.getSelectionModel().getSelectedItem();
+    tfAgentId.setText(Integer.toString(agent.getAgentId()));
+    tfFirstName.setText(agent.getFirstName());
+    tfMidInitial.setText(agent.getMidInitial());
+    tfLastName.setText(agent.getLastName());
+    tfBusPhone.setText(agent.getPhone());
+    tfEmail.setText(agent.getEmail());
+    tfPosition.setText(agent.getPosition());
+    tfAgencyId.setText(Integer.toString(agent.getAgencyId()));
+    }
+
+    @FXML
+    void onActionEdit(ActionEvent event) {
+
+    }
+
+    @FXML
+    void onActionSave(ActionEvent event) {
+
     }
 
 }// class end

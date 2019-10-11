@@ -34,7 +34,7 @@ public class Controller {
     @FXML
     void agentOnBtnAction(ActionEvent event) throws IOException {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Agents.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../controller/Agents.fxml"));
             Parent root1 = (Parent) fxmlLoader.load();
             Stage stage = new Stage();
             stage.setScene(new Scene(root1));
@@ -47,7 +47,7 @@ public class Controller {
     @FXML
     void custOnBtnAction(ActionEvent event) {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("CustomersDisplay.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../controller/CustomersDisplay.fxml"));
             Parent root2 = (Parent) fxmlLoader.load();
             Stage stage2 = new Stage();
             stage2.setScene(new Scene(root2));
