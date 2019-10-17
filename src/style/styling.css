@@ -1,0 +1,31 @@
+/*login view*/
+#loginVBox1{
+    -fx-background-color: #C0C0C0;
+}
+/*main view*/
+/*.table-view{*/
+/*    -fx-background-color: green;*/
+/*}*/
+.table-cell:filled{
+    -fx-background-color: #C0C0C0;
+}
+#apButton{
+    -fx-background-color: #C0C0C0;
+    -fx-background-radius: 5px;
+}
+#apOverView{
+    -fx-background-color: #C0C0C0;
+    -fx-background-radius: 5px;
+}
+/*agents view*/
+#apAgents{
+    -fx-background-color: #C0C0C0;
+}
+#tpAgents{
+    -fx-border-color: black;
+    -fx-background-color: white;
+}
+/*customer view*/
+#apCustomer{
+    -fx-background-color: #C0C0C0;
+}

@@ -12,9 +12,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-radius: 5px;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.LoginController">
+<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-radius: 5px;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginController">
    <children>
-      <VBox layoutX="300.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="601.0" prefWidth="500.0" style="-fx-background-color: #e0f7fa; -fx-border-color: #607d8b;">
+      <VBox fx:id="loginVBox1" layoutX="300.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="601.0" prefWidth="500.0" stylesheets="@../style/styling.css">
          <children>
             <HBox layoutY="300.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="500.0">
                <children>
@@ -44,7 +44,7 @@
                   <Image url="@../images/envelope.png" />
                </image>
             </ImageView>
-            <TextField fx:id="tfEmail" prefHeight="50.0" prefWidth="345.0" promptText="Email" style="-fx-background-color: transparent;" HBox.hgrow="ALWAYS">
+            <TextField fx:id="tfUserName" prefHeight="50.0" prefWidth="345.0" promptText="Email" style="-fx-background-color: transparent;" HBox.hgrow="ALWAYS">
                <font>
                   <Font size="14.0" />
                </font>
@@ -64,7 +64,7 @@
             </PasswordField>
          </children>
       </HBox>
-      <Button fx:id="btnLogin" layoutX="32.0" layoutY="527.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" text="Login">
+      <Button fx:id="btnLogin" layoutX="32.0" layoutY="527.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onLogInAction" prefHeight="40.0" prefWidth="100.0" text="Login">
          <font>
             <Font name="Microsoft Sans Serif" size="18.0" />
          </font>

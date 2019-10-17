@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane fx:id="apAgents" prefHeight="600.0" prefWidth="1000.0" stylesheets="@../style/styling.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AgentsController">
+   <children>
+      <TableView fx:id="tblAgents" layoutX="10.0" layoutY="290.0" onMouseClicked="#onAgentSelect" prefHeight="300.0" prefWidth="980.0" stylesheets="@../style/styling.css">
+        <columns>
+          <TableColumn fx:id="colAgentId" prefWidth="59.0" text="Id" />
+          <TableColumn fx:id="colAgtFirstName" prefWidth="119.0" text="FirstName" />
+            <TableColumn fx:id="colAgtMiddleInitial" prefWidth="109.0" text="MiddleInitial" />
+            <TableColumn fx:id="colAgtLastName" prefWidth="113.0" text="LastName" />
+            <TableColumn fx:id="colAgtBusPhone" prefWidth="106.0" text="BusPhone" />
+            <TableColumn fx:id="colAgtEmail" prefWidth="103.0" text="Email" />
+            <TableColumn fx:id="colAgtPosition" prefWidth="105.0" text="Position" />
+            <TableColumn fx:id="colAgencyId" minWidth="0.0" prefWidth="101.0" text="AgencyId" />
+            <TableColumn fx:id="colUserName" prefWidth="91.0" text="UserName" />
+            <TableColumn fx:id="colPassword" prefWidth="73.0" text="Password" />
+        </columns>
+      </TableView>
+      <VBox layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: transparent;">
+         <children>
+            <ImageView fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/user-256.png" />
+               </image>
+            </ImageView>
+         </children>
+      </VBox>
+      <Button fx:id="btnEdit" layoutX="10.0" layoutY="230.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onActionEdit" prefHeight="30.0" prefWidth="80.0" text="Edit" />
+      <Button fx:id="btnSave" layoutX="130.0" layoutY="230.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onActionSave" prefHeight="30.0" prefWidth="80.0" text="Save" />
+      <TabPane fx:id="tpAgents" layoutX="250.0" layoutY="20.0" prefHeight="250.0" prefWidth="400.0" stylesheets="@../style/styling.css" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Name">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="700.0">
+                     <children>
+                        <VBox layoutY="35.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="100.0">
+                           <children>
+                              <Label fx:id="lblId" alignment="TOP_RIGHT" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="100.0" text="Id:" textAlignment="RIGHT">
+                                 <VBox.margin>
+                                    <Insets top="5.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label fx:id="lblFistName" alignment="TOP_RIGHT" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="100.0" text="First Name:" textAlignment="RIGHT">
+                                 <VBox.margin>
+                                    <Insets top="5.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label fx:id="lblMidInitial" alignment="TOP_RIGHT" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="100.0" text="Middle Initial" textAlignment="RIGHT">
+                                 <VBox.margin>
+                                    <Insets top="5.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label fx:id="lblLastName" alignment="TOP_RIGHT" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="100.0" text="Last Name:" textAlignment="RIGHT">
+                                 <VBox.margin>
+                                    <Insets top="5.0" />
+                                 </VBox.margin>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <VBox layoutX="105.0" layoutY="35.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="200.0" style="-fx-background-color: transparent;">
+                           <children>
+                              <TextField fx:id="tfAgentId" prefHeight="15.0" prefWidth="200.0" />
+                              <TextField fx:id="tfFirstName" prefHeight="15.0" prefWidth="200.0" />
+                              <TextField fx:id="tfMidInitial" prefHeight="15.0" prefWidth="200.0" />
+                              <TextField fx:id="tfLastName" prefHeight="15.0" prefWidth="200.0" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Contact">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <VBox layoutY="35.0" prefHeight="150.0" prefWidth="100.0">
+                           <children>
+                              <Label fx:id="lblBusPhone" alignment="TOP_RIGHT" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="100.0" text="Bus Phone:" textAlignment="RIGHT">
+                                 <VBox.margin>
+                                    <Insets top="5.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label fx:id="lblEmail" alignment="TOP_RIGHT" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="100.0" text="Email:" textAlignment="RIGHT">
+                                 <VBox.margin>
+                                    <Insets top="5.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label fx:id="lblPosition" alignment="TOP_RIGHT" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="100.0" text="Position:" textAlignment="RIGHT">
+                                 <VBox.margin>
+                                    <Insets top="5.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label fx:id="lblAgencyId" alignment="TOP_RIGHT" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="100.0" text="Agency Id:" textAlignment="RIGHT">
+                                 <VBox.margin>
+                                    <Insets top="5.0" />
+                                 </VBox.margin>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <VBox layoutX="105.0" layoutY="35.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="200.0">
+                           <children>
+                              <TextField fx:id="tfBusPhone" prefHeight="15.0" prefWidth="200.0" />
+                              <TextField fx:id="tfEmail" prefHeight="15.0" prefWidth="200.0" />
+                              <TextField fx:id="tfPosition" prefHeight="15.0" prefWidth="200.0" />
+                              <TextField fx:id="tfAgencyId" prefHeight="15.0" prefWidth="200.0" />
+                           </children>
+                        </VBox>
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+           <Tab text="Security">
+              <content>
+                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="253.0" prefWidth="544.0">
+                     <children>
+                        <VBox layoutY="35.0" prefHeight="150.0" prefWidth="100.0">
+                           <children>
+                              <Label fx:id="lblUserName" alignment="TOP_RIGHT" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="100.0" text="User Name:" textAlignment="RIGHT">
+                                 <VBox.margin>
+                                    <Insets top="5.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label fx:id="lblPassword" alignment="TOP_RIGHT" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="100.0" text="Password" textAlignment="RIGHT" />
+                           </children>
+                        </VBox>
+                        <VBox layoutX="105.0" layoutY="35.0" prefHeight="150.0" prefWidth="200.0">
+                           <children>
+                              <TextField fx:id="tfUserName" prefHeight="15.0" prefWidth="200.0" />
+                              <TextField fx:id="tfPassword" prefHeight="15.0" prefWidth="200.0" />
+                           </children>
+                        </VBox>
+                     </children></AnchorPane>
+              </content>
+           </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
