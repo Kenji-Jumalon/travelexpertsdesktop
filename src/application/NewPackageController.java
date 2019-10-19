@@ -54,7 +54,14 @@
 //
 //        Connection conn = helper.createConnection();
 //        String sql = INSERT INTO `packages`(`PackageId`, `PkgName`, `PkgStartDate`, `PkgEndDate`, `PkgDesc`, `PkgBasePrice`, `PkgAgencyCommission`, `PkgImg`) VALUES ([value-1],[value-2],[value-3],[value-4],[value-5],[value-6],[value-7],[value-8])
-//
+//        PreparedStatement stmt = conn.prepareStatement(sql);
+//        stmt.setInt(1, Integer.parseInt(tfPackageId.getText()));
+//        stmt.setString(2, tfPkgName.getText());
+//        stmt.setDate(3, Date.valueOf(tfPkgStartDate.getText()));
+//        stmt.setDate(4, Date.valueOf(tfPkgEndDate.getText()));
+//        stmt.setString(5, tfPkgDesc.getText());
+//        stmt.setInt(6, Integer.parseInt(tfPkgBasePrice.getText()));
+//        stmt.setInt(7, Integer.parseInt(tfPkgAgencyCommission.getText()));
 //
 //
 //        int rows = stmt.executeInsert();

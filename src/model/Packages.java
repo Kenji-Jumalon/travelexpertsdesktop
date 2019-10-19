@@ -62,8 +62,8 @@ public class Packages {
 
     private Integer PackageId;
     private String PkgName;
-    private java.util.Date PkgStartDate;
-    private java.util.Date PkgEndDate;
+    private Date PkgStartDate;
+    private Date PkgEndDate;
     private String PkgDesc;
     private Integer PkgBasePrice;
     private Integer PkgAgencyCommission;
@@ -72,7 +72,7 @@ public class Packages {
 
     public Packages(Integer PackageId,
                     String PkgName,
-                    java.util.Date PkgStartDate,
+                    Date PkgStartDate,
                     Date PkgEndDate,
                     String PkgDesc,
                     int PkgBasePrice,

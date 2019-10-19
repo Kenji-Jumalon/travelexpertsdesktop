@@ -26,10 +26,25 @@ public class Controller {
     private Button btnAgent;
 
     @FXML
+    private Button btnPackages;
+
+    @FXML
+    private Button btnBookings;
+
+
+
+
+
+    @FXML
     private Button btnCustomer;
 
     @FXML
     private ImageView exit;
+
+    public Controller(Button btnPackages, Button btnBookings) {
+        this.btnPackages = btnPackages;
+        this.btnBookings = btnBookings;
+    }
 
     @FXML
     void agentOnBtnAction(ActionEvent event) throws IOException {
@@ -71,6 +86,21 @@ public class Controller {
     }
 
     @FXML
+    void BookingsOnBtnAction(ActionEvent event) throws IOException {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../controller/Bookings.fxml"));
+            Parent root1 = (Parent) fxmlLoader.load();
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root1));
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+
+    @FXML
     void onClickExit(MouseEvent event) {
         System.exit(0);
     }
@@ -80,6 +110,8 @@ public class Controller {
     void initialize() {
         assert btnAgent != null : "fx:id=\"btnAgent\" was not injected: check your FXML file 'main.fxml'.";
         assert btnCustomer != null : "fx:id=\"btnCustomer\" was not injected: check your FXML file 'main.fxml'.";
+        assert btnPackages != null : "fx:id=\"btnPackages\" was not injected: check your FXML file 'main.fxml'.";
+        assert btnBookings != null : "fx:id=\"btnBookings\" was not injected: check your FXML file 'main.fxml'.";
 
     }
 
