@@ -5,12 +5,11 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Properties;
 
-public class DBHelper {
+public class DBConnection {
+    public DBConnection(){
 
-    public DBHelper(){
+    }
 
-
-}
     public Connection createConnection() {
         Connection conn = null;
 
@@ -20,12 +19,10 @@ public class DBHelper {
             userInfo.put("user", "Sabiha");
             userInfo.put("password", "P@ssw0rd");
             conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/travelexperts", userInfo);
-        } catch (SQLException |ClassNotFoundException var3) {
+        } catch (SQLException | ClassNotFoundException var3) {
             var3.printStackTrace();
-
         }
+
         return conn;
     }
-
-
 }

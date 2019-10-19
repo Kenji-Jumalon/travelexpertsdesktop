@@ -17,7 +17,7 @@
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="511.0" prefWidth="714.0" style="-fx-background-color: #72DDCD;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Bookings.Controller">
 
     <children>
-      <Pane layoutX="36.0" layoutY="78.0" prefHeight="358.0" prefWidth="662.0" style="-fx-background-color: silver;" />
+      <Pane layoutX="36.0" layoutY="78.0" prefHeight="358.0" prefWidth="645.0" style="-fx-background-color: silver;" />
       <MenuBar layoutY="-5.0" prefHeight="32.0" prefWidth="714.0" style="-fx-background-color: silver;">
         <menus>
           <Menu mnemonicParsing="false" text="File">
@@ -41,8 +41,8 @@
       </MenuBar>
         <ComboBox fx:id="cbBookingId" layoutX="406.0" layoutY="37.0" prefHeight="25.0" prefWidth="189.0" />
         <Label layoutX="267.0" layoutY="41.0" prefHeight="17.0" prefWidth="94.0" text="Booking ID:" />
-        <Button fx:id="btnEdit" layoutX="377.0" layoutY="344.0" mnemonicParsing="false" onAction="#onActionBtnEdit" text="Edit" />
-        <Button fx:id="btnSave" layoutX="446.0" layoutY="344.0" mnemonicParsing="false" onAction="#OnActionBtnSave" text="Save" />
+        <Button fx:id="btnEdit" layoutX="363.0" layoutY="344.0" mnemonicParsing="false" onAction="#onActionBtnEdit" prefHeight="25.0" prefWidth="51.0" text="Edit" />
+        <Button fx:id="btnSave" layoutX="446.0" layoutY="344.0" mnemonicParsing="false" onAction="#OnActionBtnSave" prefHeight="25.0" prefWidth="51.0" text="Save" textAlignment="CENTER" />
         <VBox layoutX="46.0" layoutY="143.0" prefHeight="178.0" prefWidth="182.0" spacing="10.0">
             <children>
                 <Label text="Booking ID:" />
@@ -67,7 +67,7 @@
             <children>
                 <TextField fx:id="tfBookingId" prefHeight="34.0" prefWidth="295.0" />
                 <TextField fx:id="tfBookingDate" prefHeight="34.0" prefWidth="298.0" />
-                <TextField fx:id="tfBookingNumber" prefHeight="32.0" prefWidth="212.0" />
+                <TextField id="tfBookingNo" fx:id="tfBookingNumber" prefHeight="32.0" prefWidth="212.0" />
                 <TextField fx:id="tfCustomerId" prefHeight="32.0" prefWidth="394.0" />
                 <TextField fx:id="tfTripType" prefHeight="32.0" prefWidth="382.0" />
                 <TextField fx:id="tfTravelerCount" prefHeight="33.0" prefWidth="386.0" />

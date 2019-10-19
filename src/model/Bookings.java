@@ -31,6 +31,8 @@ public class Bookings {
 
     }
 
+    public Bookings(int anInt, String string, String string1, String string2, String string3, String string4, String string5, int anInt1) {
+    }
 
 
     public Integer getBookingId() {
