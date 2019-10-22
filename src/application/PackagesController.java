@@ -92,13 +92,14 @@ public class PackagesController {
    public void OnActionBtnNewPackage(ActionEvent event) throws SQLException {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../controller/NewPackage.fxml"));
-            Parent root3 = (Parent) fxmlLoader.load();
+            Parent root5 = (Parent) fxmlLoader.load();
             Stage stage = new Stage();
             stage.initStyle(StageStyle.TRANSPARENT);
             stage.setTitle("NewPackage.fxml");
-            stage.setScene(new Scene(root3,  1000, 800 ));
+            stage.setScene(new Scene(root5,  1000, 800 ));
             stage.show();
         }   catch (Exception e) {
+            e.printStackTrace();
             System.out.println("Window can't load");
 
         }
@@ -237,5 +238,8 @@ public class PackagesController {
 
     public void setBtnNewPackage(Button btnNewPackage) {
         this.btnNewPackage = btnNewPackage;
+    }
+
+    public void OnActionBtnExit(ActionEvent actionEvent) {
     }
 }

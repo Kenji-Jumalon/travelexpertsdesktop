@@ -1,16 +1,26 @@
 package application;
 
 
+import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextField;
+import model.Packages;
 
+import java.sql.Connection;
+import java.sql.Date;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 
 
 
 public class NewPackageController {
-   DBHelper myConnection = new DBHelper();
-
+ Connection conn;
+ DBHelper myConnection = new DBHelper();
+ ObservableList<Packages> packages;
 
  @FXML
  private Button btnExit;
@@ -42,17 +52,17 @@ public class NewPackageController {
 
 
 
-}
 
 
 
 
 
- // @FXML
- /*void OnActionBtnSave(ActionEvent event) throws SQLException, SQLException {
 
-        Connection conn = helper.createConnection();
-       String sql = INSERT INTO `packages` VALUES(`PackageId`, `PkgName`, `PkgStartDate`, `PkgEndDate`, `PkgDesc`, `PkgBasePrice`, `PkgAgencyCommission`, `PkgImg`) //VALUES ([value-1],[value-2],[value-3],[value-4],[value-5],[value-6],[value-7],[value-8])
+ @FXML
+ void OnActionBtnSave(ActionEvent event) throws SQLException, SQLException {
+
+        Connection conn = myConnection.createConnection();
+       String sql = "INSERT INTO `packages` VALUES(`PackageId`, `PkgName`, `PkgStartDate`, `PkgEndDate`, `PkgDesc`, `PkgBasePrice`, `PkgAgencyCommission`, `PkgImg`)"; //VALUES ([value-1],[value-2],[value-3],[value-4],[value-5],[value-6],[value-7],[value-8])
        PreparedStatement stmt = (PreparedStatement) conn.prepareStatement(sql);
       stmt.setInt(1, Integer.parseInt(tfPackageId.getText()));
       stmt.setString(2, tfPkgName.getText());
@@ -63,12 +73,12 @@ public class NewPackageController {
       stmt.setInt(7, Integer.parseInt(tfPkgAgencyCommission.getText()));
 
 
-        int rows = stmt.executeInsert();
+        int rows = stmt.executeUpdate();
         conn.close();
        if (rows == 0) {
             Alert alert = new Alert(Alert.AlertType.ERROR, "Package was not added, contact Dream Team", ButtonType.OK);alert.show();
        } else {
-            Alert alert = new Alert(Alert.AlertType.INFORMATION, "Package Added successfully. We are ", ButtonType.OK);
+            Alert alert = new Alert(Alert.AlertType.INFORMATION, "Package Added successfully. We are the champions!! ", ButtonType.OK);
             alert.show();
        }
 
@@ -80,6 +90,11 @@ public class NewPackageController {
 
 
     }
+
+    public void OnActionBtnExit(ActionEvent actionEvent) {
+    }
+
+
 
 }
 
