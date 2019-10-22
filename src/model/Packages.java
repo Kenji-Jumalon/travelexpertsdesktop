@@ -44,19 +44,19 @@ public class Packages {
         PkgDesc = pkgDesc;
     }
 
-    public Integer getPkgBasePrice() {
+    public Double getPkgBasePrice() {
         return PkgBasePrice;
     }
 
-    public void setPkgBasePrice(Integer pkgBasePrice) {
+    public void setPkgBasePrice(Double pkgBasePrice) {
         PkgBasePrice = pkgBasePrice;
     }
 
-    public Integer getPkgAgencyCommission() {
+    public Double getPkgAgencyCommission() {
         return PkgAgencyCommission;
     }
 
-    public void setPkgAgencyCommission(Integer pkgAgencyCommission) {
+    public void setPkgAgencyCommission(Double pkgAgencyCommission) {
         PkgAgencyCommission = pkgAgencyCommission;
     }
 
@@ -65,8 +65,8 @@ public class Packages {
     private Date PkgStartDate;
     private Date PkgEndDate;
     private String PkgDesc;
-    private Integer PkgBasePrice;
-    private Integer PkgAgencyCommission;
+    private Double PkgBasePrice;
+    private Double PkgAgencyCommission;
 
 
 
@@ -75,8 +75,8 @@ public class Packages {
                     Date PkgStartDate,
                     Date PkgEndDate,
                     String PkgDesc,
-                    int PkgBasePrice,
-                    int PkgAgencyCommission
+                    double PkgBasePrice,
+                    double PkgAgencyCommission
     ) {
         this.PackageId = PackageId;
         this.PkgName = PkgName;
@@ -86,4 +86,11 @@ public class Packages {
         this.PkgBasePrice = PkgBasePrice;
         this.PkgAgencyCommission = PkgAgencyCommission;
     }
+
+    @Override
+    public String toString() {
+        return PackageId + " " + PkgName;
+    }
+
+
 }

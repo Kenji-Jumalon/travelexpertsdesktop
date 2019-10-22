@@ -40,12 +40,12 @@ public class Controller {
 
     @FXML
     private ImageView exit;
-
+/*
     public Controller(Button btnPackages, Button btnBookings) {
         this.btnPackages = btnPackages;
         this.btnBookings = btnBookings;
     }
-
+*/
     @FXML
     void agentOnBtnAction(ActionEvent event) throws IOException {
         try {
@@ -76,9 +76,9 @@ public class Controller {
     void packagesOnBtnAction(ActionEvent event) throws IOException {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../controller/Packages.fxml"));
-            Parent root1 = (Parent) fxmlLoader.load();
+            Parent root3 = (Parent) fxmlLoader.load();
             Stage stage = new Stage();
-            stage.setScene(new Scene(root1));
+            stage.setScene(new Scene(root3,  1000, 1000));
             stage.show();
         } catch (IOException e) {
             e.printStackTrace();
@@ -89,9 +89,9 @@ public class Controller {
     void BookingsOnBtnAction(ActionEvent event) throws IOException {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../controller/Bookings.fxml"));
-            Parent root1 = (Parent) fxmlLoader.load();
+            Parent root4 = (Parent) fxmlLoader.load();
             Stage stage = new Stage();
-            stage.setScene(new Scene(root1));
+            stage.setScene(new Scene(root4));
             stage.show();
         } catch (IOException e) {
             e.printStackTrace();
@@ -115,4 +115,7 @@ public class Controller {
 
     }
 
+    public void setResources(ResourceBundle resources) {
+        this.resources = resources;
+    }
 }//controller class end

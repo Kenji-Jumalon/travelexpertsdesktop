@@ -14,21 +14,36 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import model.Packages;
 
+import java.net.URL;
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.ResourceBundle;
 
 public class PackagesController {
-    DBHelper myConnection = new DBHelper();
 
+    Connection conn;
+    DBHelper myConnection = new DBHelper();
+    ObservableList<Packages> packages;
+
+   @FXML
+    private ResourceBundle resources;
 
     @FXML
-    private ComboBox<Packages> cbPackageId;
+    private URL location;
+
+
 
     @FXML
     private Button btnEdit;
 
     @FXML
     private Button btnSave;
+
+    @FXML
+    private Button btnDelete;
+
+    @FXML
+    private ComboBox<Packages> cbPackageId;
 
     @FXML
     private TextField tfPackageId;
@@ -51,17 +66,37 @@ public class PackagesController {
     @FXML
     private TextField tfPkgAgencyCommission;
 
-
-
     @FXML
-    void OnActionBtnNewPackage(ActionEvent event) throws SQLException {
+    private Button btnNewPackage;
+
+
+   /* @FXML
+    void OnActionBtnNewPackage(ActionEvent event) throws IOException {
+            try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../controller/NewPackage.fxml"));
+            Parent root5 = (Parent) fxmlLoader.load();
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root5,  1000, 1000));
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+
+
+
+
+*/
+   public void OnActionBtnNewPackage(ActionEvent event) throws SQLException {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("newPackage.fxml"));
-            Parent root1 = (Parent) fxmlLoader.load();
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../controller/NewPackage.fxml"));
+            Parent root3 = (Parent) fxmlLoader.load();
             Stage stage = new Stage();
             stage.initStyle(StageStyle.TRANSPARENT);
-            stage.setTitle("newPackage.fxml");
-            stage.setScene(new Scene(root1));
+            stage.setTitle("NewPackage.fxml");
+            stage.setScene(new Scene(root3,  1000, 800 ));
             stage.show();
         }   catch (Exception e) {
             System.out.println("Window can't load");
@@ -71,19 +106,26 @@ public class PackagesController {
     }
 
 
+
+
+
+
+
+
     @FXML
     void OnActionBtnSave(ActionEvent event)throws SQLException {
 
         Connection conn = myConnection.createConnection();
-        String sql = "UPDATE `Packages` SET `PackageId`=?,`PkgName`=?, `PkgStartDate`=?, `PkgEndDate`=?, `PkgDesc`=?,`PkgBasePrice`=?, `PkgAgencyCommission`=?,WHERE `PackageId`= ?";
+        String sql = "UPDATE `Packages` SET `PkgName`=?, `PkgStartDate`=?, `PkgEndDate`=?, `PkgDesc`=?,`PkgBasePrice`=?, `PkgAgencyCommission`=? WHERE `PackageId`= ?";
         PreparedStatement stmt = conn.prepareStatement(sql);
-        stmt.setInt(1, Integer.parseInt(tfPackageId.getText()));
-        stmt.setString(2, tfPkgName.getText());
-        stmt.setDate(3, Date.valueOf(tfPkgStartDate.getText()));
-        stmt.setDate(4, Date.valueOf(tfPkgEndDate.getText()));
-        stmt.setString(5, tfPkgDesc.getText());
-        stmt.setInt(6, Integer.parseInt(tfPkgBasePrice.getText()));
-        stmt.setInt(7, Integer.parseInt(tfPkgAgencyCommission.getText()));
+
+        stmt.setString(1, tfPkgName.getText());
+        stmt.setDate(2, Date.valueOf(tfPkgStartDate.getText()));
+        stmt.setDate(3, Date.valueOf(tfPkgEndDate.getText()));
+        stmt.setString(4, tfPkgDesc.getText());
+        stmt.setDouble(5, Double.parseDouble(tfPkgBasePrice.getText()));
+        stmt.setDouble(6,Double.parseDouble(tfPkgAgencyCommission.getText()));
+        stmt.setInt(7, Integer.parseInt(tfPackageId.getText()));
         int rows = stmt.executeUpdate();
         conn.close();
         if (rows == 0) {
@@ -96,7 +138,7 @@ public class PackagesController {
     }
 
     @FXML
-    void onActionBtnEdit(ActionEvent event) {
+        void OnActionBtnEdit(ActionEvent event) {
 
         btnEdit.setDisable(true);
         tfPackageId.setEditable(true);
@@ -108,6 +150,25 @@ public class PackagesController {
         tfPkgAgencyCommission.setEditable(true);
         btnSave.setDisable(false);
     }
+
+
+    @FXML
+    void OnActionBtnDelete(ActionEvent event) throws SQLException {
+
+        Connection conn = myConnection.createConnection();
+        //"DELETE FROM `packages` WHERE `packages`.`PackageId` = 3"?
+       // Alert alert = new Alert(Alert.AlertType.INFORMATION, "You are about to delete a Package, press OK to confirm", ButtonType
+        String sql = "DELETE * FROM `packages` WHERE `PackageId`=?" ;
+        PreparedStatement stmt = conn.prepareStatement(sql);
+        stmt.setInt(1,Integer.parseInt(tfPackageId.getText()));
+        //Alert alert = new Alert(Alert.AlertType.INFORMATION, "You are about to delete a Package, press OK to confirm", ButtonType.OK);
+        //alert.show();
+
+
+    }
+
+
+
 
     @FXML
     void initialize() throws SQLException {
@@ -125,12 +186,12 @@ public class PackagesController {
             Connection conn = myConnection.createConnection();
             Statement stmt = conn.createStatement();
 
-            ResultSet rs = stmt.executeQuery("select * from Packages");
+            ResultSet rs = stmt.executeQuery("select PackageId, PkgName, PkgStartDate, PkgEndDate, PkgDesc, PkgBasePrice, PkgAgencyCommission from Packages");
             ArrayList<Packages> packagesArrayList = new ArrayList<>();
             while (rs.next()) {
-                packagesArrayList.add(new Packages(rs.getInt(0), rs.getString(1),
-                        rs.getDate(2), rs.getDate(3),
-                        rs.getString(4), rs.getInt(5), rs.getInt(6)));
+                packagesArrayList.add(new Packages(rs.getInt(1), rs.getString(2),
+                        rs.getDate(3), rs.getDate(4),
+                        rs.getString(5), rs.getDouble(6), rs.getDouble(7)));
             }
 
             ObservableList<Packages> packages = FXCollections.observableArrayList(packagesArrayList);
@@ -138,6 +199,12 @@ public class PackagesController {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+
+
+
+
+
+
         cbPackageId.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Packages>() {
             @Override
             public void changed(ObservableValue<? extends Packages> observable, Packages oldValue, Packages newValue) {
@@ -155,4 +222,20 @@ public class PackagesController {
         });
     }
 
+
+    public Button getBtnDelete() {
+        return btnDelete;
+    }
+
+    public void setBtnDelete(Button btnDelete) {
+        this.btnDelete = btnDelete;
+    }
+
+    public Button getBtnNewPackage() {
+        return btnNewPackage;
+    }
+
+    public void setBtnNewPackage(Button btnNewPackage) {
+        this.btnNewPackage = btnNewPackage;
+    }
 }
