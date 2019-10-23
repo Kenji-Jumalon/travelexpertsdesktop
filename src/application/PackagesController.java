@@ -94,7 +94,7 @@ public class PackagesController {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../controller/NewPackage.fxml"));
             Parent root5 = (Parent) fxmlLoader.load();
             Stage stage = new Stage();
-            stage.initStyle(StageStyle.TRANSPARENT);
+            stage.initStyle(StageStyle.DECORATED);
             stage.setTitle("NewPackage.fxml");
             stage.setScene(new Scene(root5,  1000, 800 ));
             stage.show();

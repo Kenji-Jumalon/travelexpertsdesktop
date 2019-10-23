@@ -114,7 +114,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="dynamic.classpath" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../JavaIntelliJ2" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.0" />
@@ -130,6 +130,9 @@
       <recent name="application" />
       <recent name="controller" />
       <recent name="model" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\650244\Desktop\MyJavafxProject\travelexpertsdesktop\src\images" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\637124\Documents\SAIT\CMPP 264 Java\Team3JavaFx\travelexpertsdesktop\src\images" />
@@ -253,7 +256,8 @@
       <workItem from="1570714134571" duration="4601000" />
       <workItem from="1571031161886" duration="13203000" />
       <workItem from="1571240687308" duration="39754000" />
-      <workItem from="1571516561211" duration="53273000" />
+      <workItem from="1571516561211" duration="53772000" />
+      <workItem from="1571848463321" duration="2229000" />
     </task>
     <task id="LOCAL-00001" summary="onclick exit added">
       <created>1570714112443</created>

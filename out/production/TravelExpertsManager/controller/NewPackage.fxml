@@ -13,7 +13,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="528.0" prefWidth="747.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.NewPackageController">
    <children>
-      <Pane layoutX="26.0" layoutY="51.0" prefHeight="467.0" prefWidth="711.0" style="-fx-background-color: pink;">
+      <Pane layoutX="26.0" layoutY="51.0" prefHeight="459.0" prefWidth="690.0" style="-fx-background-color: pink;">
          <children>
             <Button id="btnSave" fx:id="btnSave" layoutX="523.0" layoutY="358.0" mnemonicParsing="false" onAction="#OnActionBtnSave" prefHeight="29.0" prefWidth="76.0" text="Save" />
             <Button id="btnExit" fx:id="btnExit" layoutX="440.0" layoutY="358.0" mnemonicParsing="false" onAction="#OnActionBtnExit" prefHeight="29.0" prefWidth="76.0" text="Exit" />
@@ -51,7 +51,7 @@
                   </Label>
                </children>
             </VBox>
-            <TextField fx:id="tfImage" layoutX="20.0" layoutY="345.0" prefHeight="96.0" prefWidth="220.0" />
+            <TextField fx:id="tfImage" layoutX="61.0" layoutY="342.0" prefHeight="100.0" prefWidth="247.0" />
          </children>
       </Pane>
       <MenuBar layoutX="-2.0" prefHeight="33.0" prefWidth="747.0">
