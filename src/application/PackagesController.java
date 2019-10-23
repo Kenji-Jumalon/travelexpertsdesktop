@@ -240,6 +240,7 @@ public class PackagesController {
         this.btnNewPackage = btnNewPackage;
     }
 
-    public void OnActionBtnExit(ActionEvent actionEvent) {
+    public void OnActionMenuExit(ActionEvent actionEvent) {
+        System.exit(0);
     }
 }

@@ -11,15 +11,15 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="526.0" prefWidth="671.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.NewPackageController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="528.0" prefWidth="747.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.NewPackageController">
    <children>
-      <Pane layoutX="26.0" layoutY="70.0" prefHeight="425.0" prefWidth="630.0" style="-fx-background-color: pink;">
+      <Pane layoutX="26.0" layoutY="51.0" prefHeight="444.0" prefWidth="692.0" style="-fx-background-color: pink;">
          <children>
             <Button id="btnSave" fx:id="btnSave" layoutX="523.0" layoutY="358.0" mnemonicParsing="false" onAction="#OnActionBtnSave" prefHeight="29.0" prefWidth="76.0" text="Save" />
             <Button id="btnExit" fx:id="btnExit" layoutX="440.0" layoutY="358.0" mnemonicParsing="false" onAction="#OnActionBtnExit" prefHeight="29.0" prefWidth="76.0" text="Exit" />
-            <VBox layoutX="57.0" layoutY="35.0" prefHeight="250.0" prefWidth="173.0">
+            <VBox layoutX="73.0" layoutY="55.0" prefHeight="243.0" prefWidth="161.0">
                <children>
-                  <Label alignment="CENTER" prefHeight="22.0" prefWidth="185.0" text="Package Id:">
+                  <Label alignment="CENTER" prefHeight="5.0" prefWidth="176.0" text="Package Id:">
                      <font>
                         <Font size="18.0" />
                      </font></Label>
@@ -53,11 +53,11 @@
             </VBox>
          </children>
       </Pane>
-      <MenuBar layoutY="-1.0" prefHeight="35.0" prefWidth="671.0">
+      <MenuBar layoutX="-2.0" prefHeight="33.0" prefWidth="747.0">
         <menus>
           <Menu mnemonicParsing="false" text="File">
             <items>
-              <MenuItem mnemonicParsing="false" text="Close" />
+              <MenuItem mnemonicParsing="false" onAction="#OnActionMenuExit" text="Close" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Edit">

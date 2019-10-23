@@ -59,11 +59,13 @@ public class NewPackageController {
 
 
  @FXML
- void OnActionBtnSave(ActionEvent event) throws SQLException, SQLException {
+ void OnActionBtnSave(ActionEvent event) throws SQLException {
 
         Connection conn = myConnection.createConnection();
-       String sql = "INSERT INTO `packages` VALUES(`PackageId`, `PkgName`, `PkgStartDate`, `PkgEndDate`, `PkgDesc`, `PkgBasePrice`, `PkgAgencyCommission`, `PkgImg`)"; //VALUES ([value-1],[value-2],[value-3],[value-4],[value-5],[value-6],[value-7],[value-8])
-       PreparedStatement stmt = (PreparedStatement) conn.prepareStatement(sql);
+           String sql = "INSERT INTO `packages` VALUES(`PackageId`, `PkgName`, `PkgStartDate`, `PkgEndDate`, `PkgDesc`, `PkgBasePrice`, `PkgAgencyCommission`, `PkgImg`)"; //VALUES ([value-1],[value-2],[value-3],[value-4],[value-5],[value-6],[value-7],[value-8])
+
+
+     PreparedStatement stmt = (PreparedStatement) conn.prepareStatement(sql);
       stmt.setInt(1, Integer.parseInt(tfPackageId.getText()));
       stmt.setString(2, tfPkgName.getText());
       stmt.setDate(3, Date.valueOf(tfPkgStartDate.getText()));
@@ -92,10 +94,13 @@ public class NewPackageController {
     }
 
     public void OnActionBtnExit(ActionEvent actionEvent) {
+        System.exit(0);
     }
 
 
-
+    public void OnActionMenuExit(ActionEvent actionEvent) {
+        System.exit(0);
+    }
 }
 
 

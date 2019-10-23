@@ -6,7 +6,6 @@
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.ScrollBar?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
@@ -14,8 +13,6 @@
 
 <AnchorPane prefHeight="700" prefWidth="800" style="-fx-background-color: #72DDCD;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.PackagesController">
    <children>
-      <ScrollBar layoutX="741.0" layoutY="24.0" orientation="VERTICAL" prefHeight="558.0" prefWidth="24.0" />
-      <ScrollBar layoutX="-5.0" layoutY="557.0" prefHeight="25.0" prefWidth="746.0" />
       <Pane layoutX="29.0" layoutY="135.0" prefHeight="397.0" prefWidth="683.0" style="-fx-background-color: silver;">
          <children>
             <Button fx:id="btnEdit" layoutX="257.0" layoutY="326.0" mnemonicParsing="false" onAction="#OnActionBtnEdit" prefHeight="25.0" prefWidth="64.0" text="Edit" />
@@ -23,11 +20,11 @@
             <Button fx:id="btnDelete" layoutX="512.0" layoutY="326.0" mnemonicParsing="false" onAction="#OnActionBtnDelete" prefHeight="25.0" prefWidth="64.0" text="Delete" />
          </children>
       </Pane>
-      <MenuBar prefHeight="27.0" prefWidth="765.0">
+      <MenuBar prefHeight="27.0" prefWidth="792.0">
         <menus>
           <Menu mnemonicParsing="false" text="File">
             <items>
-              <MenuItem mnemonicParsing="false" text="Close" />
+              <MenuItem mnemonicParsing="false" onAction="#OnActionMenuExit" text="Close" />
                   <MenuItem mnemonicParsing="false" text="New" />
             </items>
           </Menu>

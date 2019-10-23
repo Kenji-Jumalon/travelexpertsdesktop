@@ -78,7 +78,7 @@ public class Controller {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../controller/Packages.fxml"));
             Parent root3 = (Parent) fxmlLoader.load();
             Stage stage = new Stage();
-            stage.setScene(new Scene(root3,  1000, 1000));
+            stage.setScene(new Scene(root3,  800, 800));
             stage.show();
         } catch (IOException e) {
             e.printStackTrace();
