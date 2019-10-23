@@ -154,7 +154,7 @@ public class PackagesController {
 
 
     @FXML
-    void OnActionBtnDelete(ActionEvent event) throws SQLException {
+    boolean OnActionBtnDelete(ActionEvent event) throws SQLException {
 
         Connection conn = myConnection.createConnection();
         //"DELETE FROM `packages` WHERE `packages`.`PackageId` = 3"?
@@ -162,6 +162,21 @@ public class PackagesController {
         String sql = "DELETE * FROM `packages` WHERE `PackageId`=?" ;
         PreparedStatement stmt = conn.prepareStatement(sql);
         stmt.setInt(1,Integer.parseInt(tfPackageId.getText()));
+
+
+
+        System.out.println(sql);
+        Statement stmt1 = conn.createStatement();
+        int numRows = stmt1.executeUpdate(sql);
+        conn.close();
+        if (numRows > 0)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
         //Alert alert = new Alert(Alert.AlertType.INFORMATION, "You are about to delete a Package, press OK to confirm", ButtonType.OK);
         //alert.show();
 

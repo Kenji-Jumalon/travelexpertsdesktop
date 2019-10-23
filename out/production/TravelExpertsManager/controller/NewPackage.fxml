@@ -11,15 +11,15 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="553.0" prefWidth="734.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.NewPackageController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="528.0" prefWidth="747.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.NewPackageController">
    <children>
-      <Pane layoutX="26.0" layoutY="70.0" prefHeight="425.0" prefWidth="630.0" style="-fx-background-color: pink;">
+      <Pane layoutX="26.0" layoutY="51.0" prefHeight="467.0" prefWidth="711.0" style="-fx-background-color: pink;">
          <children>
             <Button id="btnSave" fx:id="btnSave" layoutX="523.0" layoutY="358.0" mnemonicParsing="false" onAction="#OnActionBtnSave" prefHeight="29.0" prefWidth="76.0" text="Save" />
             <Button id="btnExit" fx:id="btnExit" layoutX="440.0" layoutY="358.0" mnemonicParsing="false" onAction="#OnActionBtnExit" prefHeight="29.0" prefWidth="76.0" text="Exit" />
-            <VBox layoutX="57.0" layoutY="35.0" prefHeight="250.0" prefWidth="173.0">
+            <VBox layoutX="73.0" layoutY="55.0" prefHeight="243.0" prefWidth="161.0">
                <children>
-                  <Label alignment="CENTER" prefHeight="22.0" prefWidth="185.0" text="Package Id:">
+                  <Label alignment="CENTER" prefHeight="5.0" prefWidth="176.0" text="Package Id:">
                      <font>
                         <Font size="18.0" />
                      </font></Label>
@@ -51,9 +51,10 @@
                   </Label>
                </children>
             </VBox>
+            <TextField fx:id="tfImage" layoutX="20.0" layoutY="345.0" prefHeight="96.0" prefWidth="220.0" />
          </children>
       </Pane>
-      <MenuBar layoutY="8.0" prefHeight="27.0" prefWidth="739.0">
+      <MenuBar layoutX="-2.0" prefHeight="33.0" prefWidth="747.0">
         <menus>
           <Menu mnemonicParsing="false" text="File">
             <items>

@@ -10,11 +10,7 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextField;
 import model.Packages;
 
-import java.sql.Connection;
-import java.sql.Date;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-
+import java.sql.*;
 
 
 public class NewPackageController {
@@ -50,32 +46,55 @@ public class NewPackageController {
   @FXML
   private TextField tfPkgAgencyCommission;
 
+    @FXML
+    private TextField tfImage;
 
 
 
-
-
-
-
-
- @FXML
- void OnActionBtnSave(ActionEvent event) throws SQLException {
+    @FXML
+     boolean OnActionBtnSave(ActionEvent event) throws SQLException {
 
         Connection conn = myConnection.createConnection();
-           String sql = "INSERT INTO `packages` VALUES(`PackageId`, `PkgName`, `PkgStartDate`, `PkgEndDate`, `PkgDesc`, `PkgBasePrice`, `PkgAgencyCommission`, `PkgImg`)"; //VALUES ([value-1],[value-2],[value-3],[value-4],[value-5],[value-6],[value-7],[value-8])
+           String sql = "INSERT INTO `packages` (`PkgName`, `PkgStartDate`, `PkgEndDate`, `PkgDesc`, `PkgBasePrice`, `PkgAgencyCommission`, `PkgImg`) values (?,?,?,?,?,?,?)"; //VALUES ([value-1],[value-2],[value-3],[value-4],[value-5],[value-6],[value-7],[value-8])
 
 
      PreparedStatement stmt = (PreparedStatement) conn.prepareStatement(sql);
-      stmt.setInt(1, Integer.parseInt(tfPackageId.getText()));
-      stmt.setString(2, tfPkgName.getText());
-      stmt.setDate(3, Date.valueOf(tfPkgStartDate.getText()));
-      stmt.setDate(4, Date.valueOf(tfPkgEndDate.getText()));
-      stmt.setString(5, tfPkgDesc.getText());
-      stmt.setInt(6, Integer.parseInt(tfPkgBasePrice.getText()));
-      stmt.setInt(7, Integer.parseInt(tfPkgAgencyCommission.getText()));
+     // stmt.setInt(1, Integer.parseInt(tfPackageId.getText()));
+      stmt.setString(1, tfPkgName.getText());
+      stmt.setDate(2, Date.valueOf(tfPkgStartDate.getText()));
+      stmt.setDate(3, Date.valueOf(tfPkgEndDate.getText()));
+      stmt.setString(4, tfPkgDesc.getText());
+      stmt.setDouble(5, Double.parseDouble(tfPkgBasePrice.getText()));
+      stmt.setDouble(6, Double.parseDouble(tfPkgAgencyCommission.getText()));
+     stmt.setString(7, tfImage.getText());
 
 
-        int rows = stmt.executeUpdate();
+
+
+     System.out.println(stmt);
+
+     int numRows = stmt.executeUpdate();
+     conn.close();
+     if (numRows > 0)
+     {
+         Alert alert = new Alert(Alert.AlertType.INFORMATION, "Package created successfully", ButtonType.OK);
+         alert.show();
+
+         return true;
+     }
+     else
+     {
+         Alert alert = new Alert(Alert.AlertType.INFORMATION, "New Package not created", ButtonType.OK);
+         alert.show();
+
+         return false;
+     }
+
+
+
+
+
+       /* int rows = stmt.executeUpdate();
         conn.close();
        if (rows == 0) {
             Alert alert = new Alert(Alert.AlertType.ERROR, "Package was not added, contact Dream Team", ButtonType.OK);alert.show();
@@ -84,7 +103,7 @@ public class NewPackageController {
             alert.show();
        }
 
-
+*/
 
 
 
