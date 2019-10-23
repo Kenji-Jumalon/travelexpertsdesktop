@@ -9,6 +9,7 @@ import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import java.io.IOException;
 import java.net.URL;
@@ -52,7 +53,7 @@ public class Controller {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../controller/Agents.fxml"));
             Parent root1 = (Parent) fxmlLoader.load();
             Stage stage = new Stage();
-            stage.setScene(new Scene(root1));
+            stage.setScene(new Scene(root1, 1000,1000));
             stage.show();
         } catch (IOException e) {
             e.printStackTrace();
@@ -65,7 +66,7 @@ public class Controller {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../controller/CustomersDisplay.fxml"));
             Parent root2 = (Parent) fxmlLoader.load();
             Stage stage2 = new Stage();
-            stage2.setScene(new Scene(root2));
+            stage2.setScene(new Scene(root2, 1200,1200));
             stage2.show();
         } catch (IOException e) {
             e.printStackTrace();
@@ -77,9 +78,10 @@ public class Controller {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../controller/Packages.fxml"));
             Parent root3 = (Parent) fxmlLoader.load();
-            Stage stage = new Stage();
-            stage.setScene(new Scene(root3,  800, 800));
-            stage.show();
+            Stage stage3 = new Stage();
+            stage3.setScene(new Scene(root3));
+            stage3.initStyle(StageStyle.UNDECORATED);
+            stage3.show();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -90,9 +92,9 @@ public class Controller {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../controller/Bookings.fxml"));
             Parent root4 = (Parent) fxmlLoader.load();
-            Stage stage = new Stage();
-            stage.setScene(new Scene(root4));
-            stage.show();
+            Stage stage4 = new Stage();
+            stage4.setScene(new Scene(root4));
+            stage4.show();
         } catch (IOException e) {
             e.printStackTrace();
         }

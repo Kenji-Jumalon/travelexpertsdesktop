@@ -8,8 +8,8 @@ public class Bookings {
     private Integer BookingNo;
     private Integer CustomerId;
     private Integer TripTypeId;
+    private Integer PackageId;
     private Integer TravelerCount;
-
 
 
 
@@ -18,6 +18,7 @@ public class Bookings {
                  Integer BookingNo,
                  Integer CustomerId,
                  Integer TripTypeId,
+                    Integer PackageId,
                  Integer TravelerCount
 
     ) {
@@ -31,7 +32,9 @@ public class Bookings {
 
     }
 
-    public Bookings(int anInt, String string, String string1, String string2, String string3, String string4, String string5, int anInt1) {
+
+
+    public Bookings(int anInt, java.sql.Date date, int anInt1, int anInt2, int anInt3, int anInt4, int anInt5) {
     }
 
 
@@ -75,6 +78,16 @@ public class Bookings {
         TripTypeId = TripTypeId;
     }
 
+    public Integer getPackageId() {
+        return PackageId;
+    }
+
+    public void setPackage(Integer PackageId) {
+        PackageId = PackageId;
+    }
+
+
+
     public Integer getTravelerCount() {
         return TravelerCount;
     }
@@ -90,4 +103,6 @@ public class Bookings {
         return BookingId + " " + BookingNo; // + " " + TravelerCount + " " + TripTypeId + " " + CustomerId + " "
         // + BookingDate;
     }
+
+
 }

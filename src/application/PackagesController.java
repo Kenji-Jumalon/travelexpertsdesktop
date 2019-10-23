@@ -96,7 +96,7 @@ public class PackagesController {
             Stage stage = new Stage();
             stage.initStyle(StageStyle.DECORATED);
             stage.setTitle("NewPackage.fxml");
-            stage.setScene(new Scene(root5,  1000, 800 ));
+            stage.setScene(new Scene(root5,  1000, 1000 ));
             stage.show();
         }   catch (Exception e) {
             e.printStackTrace();
@@ -155,19 +155,22 @@ public class PackagesController {
 
     @FXML
     boolean OnActionBtnDelete(ActionEvent event) throws SQLException {
-
+        int numRows = 0;
         Connection conn = myConnection.createConnection();
         //"DELETE FROM `packages` WHERE `packages`.`PackageId` = 3"?
-       // Alert alert = new Alert(Alert.AlertType.INFORMATION, "You are about to delete a Package, press OK to confirm", ButtonType
-        String sql = "DELETE * FROM `packages` WHERE `PackageId`=?" ;
-        PreparedStatement stmt = conn.prepareStatement(sql);
-        stmt.setInt(1,Integer.parseInt(tfPackageId.getText()));
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "You are about to delete a package,press yes to confirm", ButtonType.YES, ButtonType.CANCEL);
+                alert.showAndWait();
+                if (alert.getResult() == ButtonType.YES){
+                    String sql = "DELETE FROM packages WHERE PackageId=?" ;
+                    PreparedStatement stmt = conn.prepareStatement(sql);
+                    int r = Integer.parseInt(tfPackageId.getText());
+                    stmt.setInt(1, r);
+                    System.out.println(r);
+                    numRows = stmt.executeUpdate();
+                }else{
+                    System.exit(0);
+                }
 
-
-
-        System.out.println(sql);
-        Statement stmt1 = conn.createStatement();
-        int numRows = stmt1.executeUpdate(sql);
         conn.close();
         if (numRows > 0)
         {
