@@ -1,0 +1,10 @@
+/*login view*/
+/*used backrougnd color #cfd8dc - light teal*/
+/*#ffcdd2 - light pink*/
+#LoginPage{
+    -fx-background-color: white;
+}
+#btnLogin{
+    /*-fx-background-image: url("/images/Login_Power.png");*/
+    -fx-background-size: 100% 100%;
+}

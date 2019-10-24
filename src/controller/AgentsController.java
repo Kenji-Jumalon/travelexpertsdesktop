@@ -1,6 +1,7 @@
 package controller;
 
 import application.DBHelper;
+import application.Main;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -18,6 +19,7 @@ import java.util.ResourceBundle;
 public class AgentsController {
 
     DBHelper myConnection = new DBHelper();
+    Agent usrAgent;
 
     @FXML
     private TableView<Agent> tblAgents;
@@ -119,10 +121,22 @@ public class AgentsController {
     private TextField tfPassword;
 
     @FXML
+    private Label usrLastName;
+
+    @FXML
+    private Label usrFirstName;
+
+    @FXML
+    private Label usrPosition;
+
+    @FXML
     private Button btnEdit;
 
     @FXML
     private Button btnSave;
+
+    @FXML
+    private Button btnLogOut;
 
     @FXML
     void initialize() throws SQLException {
@@ -155,41 +169,52 @@ public class AgentsController {
         assert tfAgencyId != null : "fx:id=\"tfAgencyId\" was not injected: check your FXML file 'AgentsDisplay.fxml'.";
         assert tfUserName != null : "fx:id=\"tfUserName\" was not injected: check your FXML file 'AgentsDisplay.fxml'.";
         assert tfPassword != null : "fx:id=\"tfPassword\" was not injected: check your FXML file 'AgentsDisplay.fxml'.";
+        assert usrFirstName != null : "fx:id=\"usrFirstName\" was not injected: check your FXML file 'AgentsDisplay.fxml'.";
+        assert usrLastName != null : "fx:id=\"usrLastName\" was not injected: check your FXML file 'AgentsDisplay.fxml'.";
+        assert usrPosition != null : "fx:id=\"usrPosition\" was not injected: check your FXML file 'AgentsDisplay.fxml'.";
         assert btnEdit != null : "fx:id=\"btnEdit\" was not injected: check your FXML file 'AgentsDisplay.fxml'.";
         assert btnSave != null : "fx:id=\"btnSave\" was not injected: check your FXML file 'AgentsDisplay.fxml'.";
+        assert btnLogOut != null : "fx:id=\"btnLogOut\" was not injected: check your FXML file 'AgentsDisplay.fxml'.";
 
-//        this.lblId.setVisible(false);
-//        this.lblFistName.setVisible(false);
-//        this.lblMidInitial.setVisible(false);
-//        this.lblLastName.setVisible(false);
-//        this.lblBusPhone.setVisible(false);
-//        this.lblEmail.setVisible(false);
-//        this.lblPosition.setVisible(false);
-//        this.lblAgencyId.setVisible(false);
-//        this.lblUserName.setVisible(false);
-//        this.lblPassword.setVisible(false);
-//
-//        this.tfAgentId.setVisible(false);
-//        this.tfFirstName.setVisible(false);
-//        this.tfMidInitial.setVisible(false);
-//        this.tfLastName.setVisible(false);
-//        this.tfBusPhone.setVisible(false);
-//        this.tfEmail.setVisible(false);
-//        this.tfPosition.setVisible(false);
-//        this.tfAgencyId.setVisible(false);
-//        this.tfUserName.setVisible(false);
-//        this.tfPassword.setVisible(false);
+        usrAgent = Main.getUser();
 
-        this.tfAgentId.setDisable(true);
-        this.tfFirstName.setDisable(true);
-        this.tfMidInitial.setDisable(true);
-        this.tfLastName.setDisable(true);
-        this.tfBusPhone.setDisable(true);
-        this.tfEmail.setDisable(true);
-        this.tfPosition.setDisable(true);
-        this.tfAgencyId.setDisable(true);
-        this.tfUserName.setDisable(true);
-        this.tfPassword.setDisable(true);
+        usrFirstName.setText(usrAgent.getFirstName());
+        usrLastName.setText(usrAgent.getLastName());
+        usrPosition.setText(usrAgent.getPosition());
+
+
+        this.lblId.setVisible(false);
+        this.lblFistName.setVisible(false);
+        this.lblMidInitial.setVisible(false);
+        this.lblLastName.setVisible(false);
+        this.lblBusPhone.setVisible(false);
+        this.lblEmail.setVisible(false);
+        this.lblPosition.setVisible(false);
+        this.lblAgencyId.setVisible(false);
+        this.lblUserName.setVisible(false);
+        this.lblPassword.setVisible(false);
+
+        this.tfAgentId.setVisible(false);
+        this.tfFirstName.setVisible(false);
+        this.tfMidInitial.setVisible(false);
+        this.tfLastName.setVisible(false);
+        this.tfBusPhone.setVisible(false);
+        this.tfEmail.setVisible(false);
+        this.tfPosition.setVisible(false);
+        this.tfAgencyId.setVisible(false);
+        this.tfUserName.setVisible(false);
+        this.tfPassword.setVisible(false);
+
+//        this.tfAgentId.setDisable(true);
+//        this.tfFirstName.setDisable(true);
+//        this.tfMidInitial.setDisable(true);
+//        this.tfLastName.setDisable(true);
+//        this.tfBusPhone.setDisable(true);
+//        this.tfEmail.setDisable(true);
+//        this.tfPosition.setDisable(true);
+//        this.tfAgencyId.setDisable(true);
+//        this.tfUserName.setDisable(true);
+//        this.tfPassword.setDisable(true);
 
 //        ObservableList<Agent> agents = FXCollections.observableArrayList();
         colAgentId.setCellValueFactory(new PropertyValueFactory<Agent, Integer>("agentId"));
@@ -207,13 +232,8 @@ public class AgentsController {
         Statement stmt = conn.createStatement();
         ResultSet rs = stmt.executeQuery("select * from agents");
         ArrayList<Agent> agentsArrayList = new ArrayList<>();
-
         while(rs.next())
         {
-//            agentsArrayList.add(new Agent(rs.getInt(1), rs.getString(2), rs.getString(3),
-//                    rs.getString(4), rs.getString(5), rs.getString(6),
-//                    rs.getString(7), rs.getInt(8)));
-
             agentsArrayList.add(new Agent(rs.getInt(1), rs.getString(2), rs.getString(3),
                     rs.getString(4), rs.getString(5), rs.getString(6),
                     rs.getString(7), rs.getInt(8), rs.getString(9),rs.getString(10)));
@@ -221,7 +241,7 @@ public class AgentsController {
         ObservableList<Agent> agents = FXCollections.observableArrayList(agentsArrayList);
         tblAgents.setItems(agents);
         conn.close();
-    }
+    }// initialize end
 
     @FXML
     void onAgentSelect(MouseEvent event) {
@@ -240,16 +260,27 @@ public class AgentsController {
 
     @FXML
     void onActionEdit(ActionEvent event) {
-//        this.lblId.setVisible(true);
-//        this.lblFistName.setVisible(true);
-//        this.lblMidInitial.setVisible(true);
-//        this.lblLastName.setVisible(true);
-//        this.lblBusPhone.setVisible(true);
-//        this.lblEmail.setVisible(true);
-//        this.lblPosition.setVisible(true);
-//        this.lblAgencyId.setVisible(true);
-//        this.lblUserName.setVisible(true);
-//        this.lblPassword.setVisible(true);
+        this.lblId.setVisible(true);
+        this.lblFistName.setVisible(true);
+        this.lblMidInitial.setVisible(true);
+        this.lblLastName.setVisible(true);
+        this.lblBusPhone.setVisible(true);
+        this.lblEmail.setVisible(true);
+        this.lblPosition.setVisible(true);
+        this.lblAgencyId.setVisible(true);
+        this.lblUserName.setVisible(true);
+        this.lblPassword.setVisible(true);
+
+        this.tfAgentId.setVisible(true);
+        this.tfFirstName.setVisible(true);
+        this.tfMidInitial.setVisible(true);
+        this.tfLastName.setVisible(true);
+        this.tfBusPhone.setVisible(true);
+        this.tfEmail.setVisible(true);
+        this.tfPosition.setVisible(true);
+        this.tfAgencyId.setVisible(true);
+        this.tfUserName.setVisible(true);
+        this.tfPassword.setVisible(true);
 
         this.tfAgentId.setDisable(false);
         this.tfFirstName.setDisable(false);
@@ -284,6 +315,14 @@ public class AgentsController {
 //        int data = stmt.executeUpdate();
         stmt.executeUpdate();
         stmt.close();
+    }
+
+    @FXML
+    void onActionLogOut(ActionEvent event) {
+        Main.stg.show();
+        MainController.astage.close();
+        MainController.cstage.close();
+        LoginController.mstage.close();
     }
 
 }// class end

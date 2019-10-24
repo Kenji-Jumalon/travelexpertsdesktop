@@ -1,7 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Login page created, user and password created" />
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Login page created, user and password created">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/org_mindrot_jbcrypt_0_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/controller/NewPackageController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/controller/PackagesController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/fxml/NewPackage.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/fxml/Packages.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/Agent.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/Customer-Family.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/Login-with-red.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/Login.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/booking.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/btnpackage.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/clear.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/edit.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/flat_add.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/giftbox-orange.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/package-teal.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/package-yellow.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/package.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/power-brown-red.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/save.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/BookingDetail.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/Package.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/Packages.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/style/agent.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/style/customer.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/style/login.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/style/mainview.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TravelExpertsManager/application/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TravelExpertsManager/application/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/application/AgentsDisplay.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/fxml/AgentsDisplay.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/application/CustomersDisplay.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/fxml/CustomersDisplay.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/application/Login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/fxml/LoginDisplay.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/application/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/application/MainDisplay.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/fxml/MainDisplay.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/AgentsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/AgentsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/CustomersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/CustomersController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Agent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Agent.java" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,10 +130,11 @@
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="dynamic.classpath" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/images" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/fxml" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15644445" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -109,21 +150,22 @@
       <recent name="application" />
       <recent name="model" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\637124\Documents\SAIT\CMPP 264 Java\Team3JavaFx\travelexpertsdesktop\src\images" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\637124\Documents\SAIT\CMPP 264 Java\Team3JavaFx\travelexpertsdesktop\src\fxml" />
       <recent name="C:\Users\637124\Documents\SAIT\CMPP 264 Java\Team3JavaFx\travelexpertsdesktop\src\application" />
-      <recent name="C:\Users\637124\Documents\SAIT\CMPP 264 Java\Team3JavaFx\travelexpertsdesktop\src" />
       <recent name="C:\Users\637124\Documents\SAIT\CMPP 264 Java\Team3JavaFx\travelexpertsdesktop\src\controller" />
-      <recent name="C:\Users\637124\Documents\SAIT\CMPP 264 Java\Team3JavaFXTravelExperts\TravelExpertsJavaFX\src\images" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="controller" />
       <recent name="model" />
       <recent name="application" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\637124\Documents\SAIT\CMPP 264 Java\Team3JavaFx\travelexpertsdesktop\src\fxml" />
+      <recent name="C:\Users\637124\Documents\SAIT\CMPP 264 Java\Team3JavaFx\travelexpertsdesktop\src\style" />
+      <recent name="C:\Users\637124\Documents\SAIT\CMPP 264 Java\Team3JavaFx\travelexpertsdesktop\src\images" />
       <recent name="C:\Users\637124\Documents\SAIT\CMPP 264 Java\Team3JavaFx\travelexpertsdesktop\src\application" />
-      <recent name="C:\Users\637124\Documents\SAIT\CMPP 264 Java\Team3JavaFx\travelexpertsdesktop\src\controller" />
+      <recent name="C:\Users\637124\Documents\SAIT\CMPP 264 Java\Team3JavaFx\travelexpertsdesktop\src" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -243,6 +285,8 @@
       <workItem from="1570714134571" duration="4601000" />
       <workItem from="1570824555548" duration="4014000" />
       <workItem from="1571278562053" duration="2010000" />
+      <workItem from="1571877463337" duration="4735000" />
+      <workItem from="1571903699840" duration="1136000" />
     </task>
     <task id="LOCAL-00001" summary="onclick exit added">
       <created>1570714112443</created>

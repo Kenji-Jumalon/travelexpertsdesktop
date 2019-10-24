@@ -138,13 +138,17 @@ public class CustomersController {
     @FXML
     private TextField tfCustAgentId;
 
-
+    @FXML
+    private Button btnAdd;
 
     @FXML
     private Button btnEdit;
 
     @FXML
     private Button btnSave;
+
+    @FXML
+    private Button btnClear;
 
     @FXML
     void initialize() throws SQLException {
@@ -187,6 +191,8 @@ public class CustomersController {
         assert tfCustAgentId != null : "fx:id=\"tfAgentId\" was not injected: check your FXML file 'CustomersDisplay.fxml'.";
         assert btnEdit != null : "fx:id=\"btnEdit\" was not injected: check your FXML file 'CustomersDisplay.fxml'.";
         assert btnSave != null : "fx:id=\"btnSave\" was not injected: check your FXML file 'CustomersDisplay.fxml'.";
+        assert btnAdd != null : "fx:id=\"btnAdd\" was not injected: check your FXML file 'CustomersDisplay.fxml'.";
+        assert btnClear != null : "fx:id=\"btnClear\" was not injected: check your FXML file 'CustomersDisplay.fxml'.";
 
         this.lblCustomerId.setVisible(false);
         this.lblCustFistName.setVisible(false);
@@ -291,6 +297,7 @@ public class CustomersController {
         this.tfCustBusPhone.setVisible(true);
         this.tfCustEmail.setVisible(true);
         this.tfCustAgentId.setVisible(true);
+
     }
 
     @FXML
@@ -318,6 +325,60 @@ public class CustomersController {
 
 //        this.btnSave.setDisable(true);
 //        this.btnEdit.setDisable(false);
-}
+
+    }
+    @FXML
+//    where customerid=?
+    void addOnAction(ActionEvent event) throws SQLException {
+        try {
+            Connection conn = myConnection.createConnection();
+            String sql = "insert into customers ( custfirstname, custlastname, custaddress, custcity, custprov," +
+                    "custpostal, custcountry, custhomephone, custbusphone, custemail, agentid)" +
+                    " values( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ";
+            PreparedStatement stmt = conn.prepareStatement(sql);
+
+            //stmt.setString(1,tfCustomerId.getText());
+            stmt.setString(1, tfCustFirstName.getText());
+            stmt.setString(2, tfCustLastName.getText());
+            stmt.setString(3, tfCustAddress.getText());
+            stmt.setString(4, tfCustCity.getText());
+            stmt.setString(5, tfCustProvince.getText());
+            stmt.setString(6, tfCustPostal.getText());
+            stmt.setString(7, tfCustCountry.getText());
+            stmt.setString(8, tfCustHomePhone.getText());
+            stmt.setString(9, tfCustBusPhone.getText());
+            stmt.setString(10, tfCustEmail.getText());
+            stmt.setInt(11, Integer.parseInt(tfCustAgentId.getText()));
+
+            stmt.executeUpdate();
+            stmt.close();
+        } catch (SQLException e) {
+            Alert alert = new Alert(Alert.AlertType.WARNING, "Need to input some data", ButtonType.OK);
+            alert.show();
+        } catch (NumberFormatException e) {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION, "No data to be added. Please try again!", ButtonType.OK);
+            alert.show();
+        }
+//        int data = stmt.executeUpdate();
+//        this.btnEdit.setDisable(true);
+//        this.btnSave.setDisable(true);
+    }
+
+    @FXML
+    void ocActionClear(ActionEvent event) {
+        this.tfCustomerId.clear();
+        this.tfCustFirstName.clear();
+        this.tfCustLastName.clear();
+        this.tfCustAddress.clear();
+        this.tfCustCity.clear();
+        this.tfCustProvince.clear();
+        this.tfCustPostal.clear();
+        this.tfCustCountry.clear();
+        this.tfCustHomePhone.clear();
+        this.tfCustBusPhone.clear();
+        this.tfCustEmail.clear();
+        this.tfCustAgentId.clear();
+    }
+
 
 }//class end

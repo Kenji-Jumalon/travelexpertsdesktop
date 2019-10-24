@@ -1,0 +1,47 @@
+/*main view*/
+
+/*.table-view{*/
+/*    -fx-background-color: green;*/
+/*}*/
+
+#apButton{
+    -fx-background-color: #cfd8dc;
+    -fx-background-radius: 5px;
+}
+#apOverView{
+    -fx-background-color: #cfd8dc;
+    -fx-background-radius: 5px;
+    /*-fx-background-image: url("/images/houseonthelake.jpg");*/
+    -fx-background-size: 100% 100%;
+}
+#pBookingDetail{
+    -fx-border-color: black;
+    -fx-border-width: 3px;
+}
+.label{
+    -fx-background-color: #cfd8dc;
+}
+#btnAgent{
+    -fx-background-image: url("/images/Agent.png");
+    -fx-background-size: 100% 100%;
+    -fx-background-color: transparent;
+    /*-fx-border-color: black;*/
+}
+#btnCustomer{
+    -fx-background-image: url("/images/Customer-Family.png");
+    -fx-background-size: 100% 100%;
+    -fx-background-color: transparent;
+    /*-fx-border-color: black;*/
+}
+#btnPackages{
+    -fx-background-image: url("/images/btnpackage.png");
+    -fx-background-size: 100% 100%;
+    -fx-background-color: transparent;
+    /*-fx-border-color: black;*/
+}
+#btnBookings{
+    -fx-background-image: url("/images/booking.png");
+    -fx-background-size: 100% 100%;
+    -fx-background-color: transparent;
+    /*-fx-border-color: black;*/
+}

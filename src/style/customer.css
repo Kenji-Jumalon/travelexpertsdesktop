@@ -1,0 +1,40 @@
+/*customer view*/
+#apCustomer{
+    -fx-background-color: #cfd8dc;
+}
+#tpCustomer{
+    -fx-border-color: black;
+    -fx-background-color: white;
+}
+#CustomerSingleView{
+    -fx-border-color: black;
+    -fx-background-color: #cfd8dc;
+}
+#btnAdd{
+    -fx-background-image: url("/images/flat_add.png");
+    -fx-background-size: 100% 100%;
+    -fx-background-color: transparent;
+}
+#btnSave{
+    /*-fx-graphic: url("/images/save.png");*/
+    -fx-background-image: url("/images/save.png");
+    -fx-background-size: 100% 100%;
+    -fx-background-color: transparent;
+    /*-fx-border-color: black;*/
+}
+#btnEdit{
+    /*-fx-graphic: url("/images/save.png");*/
+    -fx-background-image: url("/images/edit.png");
+    -fx-background-size: 100% 100%;
+    -fx-background-color: transparent;
+    /*-fx-border-color: black;*/
+}
+#btnClear{
+    /*-fx-graphic: url("/images/save.png");*/
+    -fx-background-image: url("/images/clear.png");
+    -fx-background-size: 100% 100%;
+    -fx-background-color: transparent;
+    /*-fx-border-color: black;*/
+}
+
+

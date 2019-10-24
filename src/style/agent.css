@@ -1,0 +1,32 @@
+/*Agents View*/
+
+#apAgents{
+    -fx-background-color:#cfd8dc;
+}
+#tpAgents{
+    -fx-border-color: black;
+    -fx-background-color: white;
+}
+#btnSave{
+    /*-fx-graphic: url("/images/save.png");*/
+    -fx-background-image: url("/images/save.png");
+    -fx-background-size: 100% 100%;
+    -fx-background-color: transparent;
+    /*-fx-border-color: black;*/
+}
+#btnEdit{
+    /*-fx-graphic: url("/images/save.png");*/
+    -fx-background-image: url("/images/edit.png");
+    -fx-background-size: 100% 100%;
+    -fx-background-color: transparent;
+    /*-fx-border-color: black;*/
+}
+#btnLogOut{
+    -fx-background-image: url("/images/power-brown-red.png");
+    -fx-background-size: 100% 100%;
+    -fx-background-color: transparent;
+    /*-fx-border-color: black;*/
+}
+#SingleView{
+    -fx-border-color: black;
+}

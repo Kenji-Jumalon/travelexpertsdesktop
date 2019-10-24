@@ -1,6 +1,5 @@
 package controller;
 
-
 import application.DBHelper;
 import application.Main;
 import javafx.event.ActionEvent;
@@ -23,8 +22,10 @@ import java.util.ResourceBundle;
 
 public class LoginController {
     Agent agent;
-
     DBHelper myConnection = new DBHelper();
+    public static Stage mstage;
+    Stage mainStage;
+
 
     @FXML
     private ResourceBundle resources;
@@ -43,9 +44,9 @@ public class LoginController {
 
     @FXML
     void initialize() {
-        assert tfUserName != null : "fx:id=\"tfUserName\" was not injected: check your FXML file 'Login.fxml'.";
-        assert pwfPassword != null : "fx:id=\"pwfPassword\" was not injected: check your FXML file 'Login.fxml'.";
-        assert btnLogin != null : "fx:id=\"btnLogin\" was not injected: check your FXML file 'Login.fxml'.";
+        assert tfUserName != null : "fx:id=\"tfUserName\" was not injected: check your FXML file 'LoginDisplay.fxml'.";
+        assert pwfPassword != null : "fx:id=\"pwfPassword\" was not injected: check your FXML file 'LoginDisplay.fxml'.";
+        assert btnLogin != null : "fx:id=\"btnLogin\" was not injected: check your FXML file 'LoginDisplay.fxml'.";
 
     }
 
@@ -73,25 +74,31 @@ public class LoginController {
             prepstmt.setString(1, userName);
             ResultSet rs = prepstmt.executeQuery();
             if (rs.next()) {
-                pwd_db=rs.getString("PassWord");
+                pwd_db = rs.getString("PassWord");
                 agent = new Agent(rs.getInt("AgentId"), rs.getString("AgtFirstName"), rs.getString("AgtMiddleInitial"),
                         rs.getString("AgtLastName"), rs.getString("AgtBusPhone"), rs.getString("AgtEmail"),
                         rs.getString("AgtPosition"), rs.getInt("AgencyId"), rs.getString("UserName"),
                         rs.getString("Password"));
                 Main.setUser(agent);
-            }
-            conn.close();
-            if(BCrypt.checkpw(pwd, pwd_db)){
+//            }
+                conn.close();
+                if (BCrypt.checkpw(pwd, pwd_db)) {
 
-    //            System.getProperty("user.name");
-                Main.stg.close();// to close the login the main stage which is the Login window
-                loadWindow();
+                    //            System.getProperty("user.name");
+                    tfUserName.clear();
+                    pwfPassword.clear();
+                    Main.stg.close();// to close the login the main stage which is the Login window
+                    loadWindow();
+                }else{
+                Alert alert = new Alert(Alert.AlertType.WARNING, "Invalid Password!...Please try again!", ButtonType.OK);
+                alert.show();
+                }
             }else{
-                Alert alert = new Alert(Alert.AlertType.ERROR, "Something went wrong! try again or contact support", ButtonType.OK);
+                Alert alert = new Alert(Alert.AlertType.WARNING, "User name not found", ButtonType.OK);
                 alert.show();
             }
-        } catch (SQLException e) {
 
+        } catch (SQLException e) {
 
         }
 
@@ -99,17 +106,16 @@ public class LoginController {
 
     private void loadWindow() {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../application/MainDisplay.fxml"));
-            Parent root3 = (Parent) fxmlLoader.load();
-            Stage stage3 = new Stage();
-            stage3.setScene(new Scene(root3, 1000, 600));
-            stage3.show();
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../fxml/MainDisplay.fxml"));
+            Parent mainRoot = (Parent) fxmlLoader.load();
+//            Stage mainStage = new Stage();
+            mainStage = new Stage();
+            mainStage.setScene(new Scene(mainRoot, 900, 500));
+            mainStage.show();
         } catch (IOException e) {
             e.printStackTrace();
         }
+        this.mstage = mainStage;
     }
 
-    private void closeWindow() throws IOException {
-
-    }
 }
