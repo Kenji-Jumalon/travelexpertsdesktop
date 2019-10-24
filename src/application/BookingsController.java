@@ -1,24 +1,18 @@
 package application;
 
-        import javafx.beans.value.ChangeListener;
-        import javafx.beans.value.ObservableValue;
-        import javafx.collections.FXCollections;
-        import javafx.collections.ObservableList;
-        import javafx.event.ActionEvent;
-        import javafx.fxml.FXML;
-        import javafx.fxml.FXMLLoader;
-        import javafx.scene.Parent;
-        import javafx.scene.Scene;
-        import javafx.scene.control.*;
-        import javafx.stage.Stage;
-        import javafx.stage.StageStyle;
-        import model.Bookings;
-        import model.Packages;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.control.*;
+import model.Bookings;
 
-        import java.net.URL;
-        import java.sql.*;
-        import java.util.ArrayList;
-        import java.util.ResourceBundle;
+import java.net.URL;
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.ResourceBundle;
 
 public class BookingsController {
 
@@ -90,9 +84,9 @@ public class BookingsController {
 
         stmt.setInt(1, Integer.parseInt(tfBookingId.getText()));
         stmt.setDate(2, Date.valueOf(tfBookingDate.getText()));
-        stmt.setInt(3, Integer.parseInt(tfBookingNo.getText()));
+        stmt.setString(3, tfBookingNo.getText());
         stmt.setInt(4, Integer.parseInt(tfCustomerId.getText()));
-        stmt.setInt(5, Integer.parseInt(tfTripTypeId.getText()));
+        stmt.setString(5, tfTripTypeId.getText());
         stmt.setInt(6,Integer.parseInt(tfPackageId.getText()));
         stmt.setInt(7, Integer.parseInt(tfTravelerCount.getText()));
         int rows = stmt.executeUpdate();
@@ -121,7 +115,7 @@ public class BookingsController {
     }
 
 
-    @FXML
+  /*  @FXML
     boolean OnActionBtnDelete(ActionEvent event) throws SQLException {
         int numRows = 0;
         Connection conn = myConnection.createConnection();
@@ -154,32 +148,36 @@ public class BookingsController {
 
     }
 
-
+*/
 
 
     @FXML
     void initialize() throws SQLException {
-        assert cbBookingId != null : "fx:id=\"cbPackageId\" was not injected: check your FXML file 'main.fxml'.";
+        assert cbBookingId != null : "fx:id=\"cbBookingId\" was not injected: check your FXML file 'main.fxml'.";
         assert btnEdit != null : "fx:id=\"btnEdit\" was not injected: check your FXML file 'main.fxml'.";
         assert btnSave != null : "fx:id=\"btnSave\" was not injected: check your FXML file 'main.fxml'.";
-        assert tfBookingDate != null : "fx:id=\"tfPkgName\" was not injected: check your FXML file 'main.fxml'.";
-        assert tfBookingNo != null : "fx:id=\"tfStartDate\" was not injected: check your FXML file 'main.fxml'.";
-        assert tfCustomerId != null : "fx:id=\"tfPkgEndDate\" was not injected: check your FXML file 'main.fxml'.";
-        assert tfTripTypeId != null : "fx:id=\"tfPkgDesc\" was not injected: check your FXML file 'main.fxml'.";
-        assert tfPackageId != null : "fx:id=\"tfPkgBasePrice\" was not injected: check your FXML file 'main.fxml'.";
-        assert tfTravelerCount != null : "fx:id=\"tfPkgAgencyCommission\" was not injected: check your FXML file 'main.fxml'.";
+        assert tfBookingDate != null : "fx:id=\"tfBookingDate\" was not injected: check your FXML file 'main.fxml'.";
+        assert tfBookingNo != null : "fx:id=\"tfBookingNo\" was not injected: check your FXML file 'main.fxml'.";
+        assert tfCustomerId != null : "fx:id=\"tfCustomerId\" was not injected: check your FXML file 'main.fxml'.";
+        assert tfTripTypeId != null : "fx:id=\"tfTripTypeId\" was not injected: check your FXML file 'main.fxml'.";
+        assert tfPackageId != null : "fx:id=\"tfPackageId\" was not injected: check your FXML file 'main.fxml'.";
+        assert tfTravelerCount != null : "fx:id=\"tfTravelerCount\" was not injected: check your FXML file 'main.fxml'.";
 
         try {
             Connection conn = myConnection.createConnection();
             Statement stmt = conn.createStatement();
 
-            ResultSet rs = stmt.executeQuery("select BookingId, BookingDate, BookingNo, CustomerId, TripTypeId, PackageId, TraverlerCount from Packages");
+            ResultSet rslt = stmt.executeQuery("select * from Bookings");
             ArrayList<Bookings> bookingsArrayList = new ArrayList<>();
-            while (rs.next()) {
-                bookingsArrayList.add(new Bookings(rs.getInt(1), rs.getDate(2),
-                        rs.getInt(3), rs.getInt(4),
-                        rs.getInt(5), rs.getInt(6), rs.getInt(7)));
+            while (rslt.next()) {
+                bookingsArrayList.add(new Bookings(rslt.getInt("BookingId"), rslt.getDate("BookingDate"),
+                        rslt.getString("BookingNo"), rslt.getInt("CustomerId"),
+                        rslt.getString("TripTypeId"), rslt.getInt("PackageId"), rslt.getInt("TravelerCount")));
+
+
             }
+
+
 
             ObservableList<Bookings> bookings = FXCollections.observableArrayList(bookingsArrayList);
             cbBookingId.setItems(bookings);
@@ -198,9 +196,9 @@ public class BookingsController {
                 if (newValue != null) {
                     tfBookingId.setText(newValue.getBookingId().toString());
                     tfBookingDate.setText(newValue.getBookingDate().toString());
-                    tfBookingNo.setText(newValue.getBookingNo().toString());
+                    tfBookingNo.setText(newValue.getBookingNo());
                     tfCustomerId.setText(newValue.getCustomerId().toString());
-                    tfTripTypeId.setText(newValue.getTripTypeId().toString());
+                    tfTripTypeId.setText(newValue.getTripTypeId());
                     tfPackageId.setText( newValue.getPackageId().toString());
                     tfTravelerCount.setText(newValue.getTravelerCount().toString());
 
@@ -213,5 +211,8 @@ public class BookingsController {
 
     public void OnActionMenuExit(ActionEvent actionEvent) {
         System.exit(0);
+    }
+
+    public void onActionBtnEdit(ActionEvent actionEvent) {
     }
 }

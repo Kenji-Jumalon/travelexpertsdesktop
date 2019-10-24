@@ -44,13 +44,13 @@
       <Label layoutX="231.0" layoutY="70.0" prefHeight="17.0" prefWidth="96.0" text="Package ID:" />
       <VBox alignment="TOP_CENTER" layoutX="102.0" layoutY="176.0" prefHeight="249.0" prefWidth="193.0">
          <children>
-            <Label prefHeight="40.0" prefWidth="102.0" text="Package Id:" />
-            <Label prefHeight="38.0" prefWidth="100.0" text="Package Name :" />
-            <Label prefHeight="32.0" prefWidth="101.0" text="Start Date:" />
-            <Label prefHeight="30.0" prefWidth="101.0" text="End Date:" />
-            <Label prefHeight="41.0" prefWidth="110.0" text="Description :" />
-            <Label prefHeight="29.0" prefWidth="101.0" text="Base Price:" />
-            <Label prefHeight="31.0" prefWidth="101.0" text="Commission:" />
+            <Label prefHeight="40.0" prefWidth="100.0" text="Package Id:" />
+            <Label prefHeight="40.0" prefWidth="100.0" text="Package Name :" />
+            <Label prefHeight="40.0" prefWidth="100.0" text="Start Date:" />
+            <Label prefHeight="40.0" prefWidth="100.0" text="End Date:" />
+            <Label prefHeight="40.0" prefWidth="100.0" text="Description :" />
+            <Label prefHeight="40.0" prefWidth="100.0" text="Base Price:" />
+            <Label prefHeight="40.0" prefWidth="100.0" text="Commission:" />
          </children>
       </VBox>
       <VBox alignment="TOP_CENTER" layoutX="331.0" layoutY="179.0" prefHeight="242.0" prefWidth="250.0">

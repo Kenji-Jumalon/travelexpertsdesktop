@@ -26,21 +26,21 @@
                <font>
                   <Font size="14.0" />
                </font></Button>
-           <!--<Button fx:id="btnBookings" layoutX="25.0" layoutY="175.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#bookingOnBtnAction" prefHeight="30.0" prefWidth="150.0" text="Bookings">
+           <Button fx:id="btnBookings" layoutX="25.0" layoutY="175.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#BookingsOnBtnAction" prefHeight="30.0" prefWidth="150.0" text="Bookings">
                <font>
                   <Font size="14.0" />
                </font>
 
 
-            </Button> -->
-
-
-
-            <Button layoutX="25.0" layoutY="225.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="30.0" prefWidth="150.0" text="Btn">
-               <font>
-                  <Font size="14.0" />
-               </font>
             </Button>
+
+
+
+          <!--  <Button layoutX="25.0" layoutY="225.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="30.0" prefWidth="150.0" text="Btn">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button> -->
          </children>
       </AnchorPane>
       <AnchorPane layoutX="216.0" layoutY="25.0" prefHeight="550.0" prefWidth="770.0" style="-fx-background-color: #607d8b; -fx-background-radius: 5;">

@@ -94,6 +94,7 @@ public class Controller {
             Parent root4 = (Parent) fxmlLoader.load();
             Stage stage4 = new Stage();
             stage4.setScene(new Scene(root4));
+            stage4.initStyle(StageStyle.UNDECORATED);
             stage4.show();
         } catch (IOException e) {
             e.printStackTrace();
@@ -120,4 +121,21 @@ public class Controller {
     public void setResources(ResourceBundle resources) {
         this.resources = resources;
     }
-}//controller class end
+
+  /*  public void bookingOnBtnAction(ActionEvent actionEvent) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../controller/Bookings.fxml"));
+            Parent root4 = (Parent) fxmlLoader.load();
+            Stage stage4 = new Stage();
+            stage4.setScene(new Scene(root4));
+            stage4.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+*/
+
+
+    }
+//controller class end

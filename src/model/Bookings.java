@@ -5,21 +5,21 @@ import java.util.Date;
 public class Bookings {
     private Integer BookingId;
     private Date BookingDate;
-    private Integer BookingNo;
+    private String BookingNo;
     private Integer CustomerId;
-    private Integer TripTypeId;
+    private String TripTypeId;
     private Integer PackageId;
     private Integer TravelerCount;
 
 
 
     public Bookings(Integer BookingId,
-                 Date BookingDate,
-                 Integer BookingNo,
-                 Integer CustomerId,
-                 Integer TripTypeId,
+                    Date BookingDate,
+                    String BookingNo,
+                    Integer CustomerId,
+                    String TripTypeId,
                     Integer PackageId,
-                 Integer TravelerCount
+                    Integer TravelerCount
 
     ) {
         this.BookingId = BookingId;
@@ -27,6 +27,7 @@ public class Bookings {
         this.BookingNo = BookingNo;
         this.CustomerId = CustomerId;
         this.TripTypeId =  TripTypeId;
+        this.PackageId =  PackageId;
         this.TravelerCount = TravelerCount;
 
 
@@ -34,8 +35,8 @@ public class Bookings {
 
 
 
-    public Bookings(int anInt, java.sql.Date date, int anInt1, int anInt2, int anInt3, int anInt4, int anInt5) {
-    }
+    //public Bookings(int anInt, java.sql.Date date, int anInt1, int anInt2, int anInt3, int anInt4, int anInt5) {
+    //}
 
 
     public Integer getBookingId() {
@@ -54,7 +55,7 @@ public class Bookings {
         BookingDate = BookingDate;
     }
 
-    public Integer getBookingNo() {
+    public String getBookingNo() {
         return BookingNo;
     }
 
@@ -70,7 +71,7 @@ public class Bookings {
         CustomerId = CustomerId;
     }
 
-    public Integer getTripTypeId() {
+    public String getTripTypeId() {
         return TripTypeId;
     }
 
