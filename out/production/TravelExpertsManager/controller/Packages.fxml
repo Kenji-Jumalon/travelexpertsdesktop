@@ -10,14 +10,15 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="580.0" prefWidth="800.00" style="-fx-background-color: #72DDCD;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.PackagesController">
    <children>
-      <Pane layoutX="29.0" layoutY="135.0" prefHeight="397.0" prefWidth="683.0" style="-fx-background-color: silver;">
+      <Pane layoutX="39.0" layoutY="125.0" prefHeight="413.0" prefWidth="710.0" style="-fx-background-color: silver;">
          <children>
-            <Button fx:id="btnEdit" layoutX="257.0" layoutY="326.0" mnemonicParsing="false" onAction="#OnActionBtnEdit" prefHeight="25.0" prefWidth="64.0" text="Edit" />
-            <Button fx:id="btnSave" layoutX="392.0" layoutY="326.0" mnemonicParsing="false" onAction="#OnActionBtnSave" prefHeight="25.0" prefWidth="64.0" text="Save" />
-            <Button fx:id="btnDelete" layoutX="512.0" layoutY="326.0" mnemonicParsing="false" onAction="#OnActionBtnDelete" prefHeight="25.0" prefWidth="64.0" text="Delete" />
+            <Button fx:id="btnEdit" layoutX="263.0" layoutY="339.0" mnemonicParsing="false" onAction="#OnActionBtnEdit" prefHeight="25.0" prefWidth="79.0" text="Edit" />
+            <Button fx:id="btnSave" layoutX="396.0" layoutY="339.0" mnemonicParsing="false" onAction="#OnActionBtnSave" prefHeight="25.0" prefWidth="79.0" text="Save" />
+            <Button fx:id="btnDelete" layoutX="520.0" layoutY="339.0" mnemonicParsing="false" onAction="#OnActionBtnDelete" prefHeight="25.0" prefWidth="79.0" text="Delete" />
          </children>
       </Pane>
       <MenuBar prefHeight="27.0" prefWidth="800.0">
@@ -41,21 +42,24 @@
         </menus>
       </MenuBar>
       <ComboBox fx:id="cbPackageId" layoutX="350.0" layoutY="66.0" prefWidth="150.0" />
-      <Label layoutX="231.0" layoutY="70.0" prefHeight="17.0" prefWidth="96.0" text="Package ID:" />
+      <Label layoutX="221.0" layoutY="68.0" prefHeight="27.0" prefWidth="106.0" style="-fx-font-weight: bold; -fx-text-fill: white;" text="Package ID:">
+         <font>
+            <Font size="16.0" />
+         </font></Label>
       <VBox alignment="TOP_CENTER" layoutX="102.0" layoutY="176.0" prefHeight="249.0" prefWidth="193.0">
          <children>
-            <Label prefHeight="40.0" prefWidth="100.0" text="Package Id:" />
-            <Label prefHeight="40.0" prefWidth="100.0" text="Package Name :" />
-            <Label prefHeight="40.0" prefWidth="100.0" text="Start Date:" />
-            <Label prefHeight="40.0" prefWidth="100.0" text="End Date:" />
-            <Label prefHeight="40.0" prefWidth="100.0" text="Description :" />
-            <Label prefHeight="40.0" prefWidth="100.0" text="Base Price:" />
-            <Label prefHeight="40.0" prefWidth="100.0" text="Commission:" />
+            <Label prefHeight="40.0" prefWidth="100.0" style="-fx-font-weight: bold;" text="Package Id:" />
+            <Label prefHeight="40.0" prefWidth="100.0" style="-fx-font-weight: bold;" text="Package Name :" />
+            <Label prefHeight="40.0" prefWidth="100.0" style="-fx-font-weight: bold;" text="Start Date:" />
+            <Label prefHeight="40.0" prefWidth="100.0" style="-fx-font-weight: bold;" text="End Date:" />
+            <Label prefHeight="40.0" prefWidth="100.0" style="-fx-font-weight: bold;" text="Description :" />
+            <Label prefHeight="40.0" prefWidth="100.0" style="-fx-font-weight: bold;" text="Base Price:" />
+            <Label prefHeight="40.0" prefWidth="100.0" style="-fx-font-weight: bold;" text="Commission:" />
          </children>
       </VBox>
-      <VBox alignment="TOP_CENTER" layoutX="331.0" layoutY="179.0" prefHeight="242.0" prefWidth="250.0">
+      <VBox alignment="TOP_CENTER" layoutX="331.0" layoutY="173.0" prefHeight="255.0" prefWidth="285.0">
          <children>
-            <TextField fx:id="tfPackageId" prefHeight="40.0" prefWidth="248.0" />
+            <TextField fx:id="tfPackageId" prefHeight="39.0" prefWidth="250.0" />
             <TextField fx:id="tfPkgName" prefHeight="40.0" prefWidth="248.0" />
             <TextField fx:id="tfPkgStartDate" prefHeight="40.0" prefWidth="248.0" />
             <TextField fx:id="tfPkgEndDate" prefHeight="40.0" prefWidth="248.0" />

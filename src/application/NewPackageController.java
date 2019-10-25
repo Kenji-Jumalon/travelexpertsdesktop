@@ -46,8 +46,7 @@ public class NewPackageController {
   @FXML
   private TextField tfPkgAgencyCommission;
 
-    @FXML
-    private TextField tfImage;
+
 
 
 
@@ -55,7 +54,7 @@ public class NewPackageController {
      boolean OnActionBtnSave(ActionEvent event) throws SQLException {
 
         Connection conn = myConnection.createConnection();
-           String sql = "INSERT INTO `packages` (`PkgName`, `PkgStartDate`, `PkgEndDate`, `PkgDesc`, `PkgBasePrice`, `PkgAgencyCommission`, `PkgImg`) values (?,?,?,?,?,?,?)"; //VALUES ([value-1],[value-2],[value-3],[value-4],[value-5],[value-6],[value-7],[value-8])
+           String sql = "INSERT INTO `packages` (`PkgName`, `PkgStartDate`, `PkgEndDate`, `PkgDesc`, `PkgBasePrice`, `PkgAgencyCommission`) values (?,?,?,?,?,?)"; //VALUES ([value-1],[value-2],[value-3],[value-4],[value-5],[value-6],[value-7],[value-8])
 
 
      PreparedStatement stmt = (PreparedStatement) conn.prepareStatement(sql);
@@ -66,7 +65,7 @@ public class NewPackageController {
       stmt.setString(4, tfPkgDesc.getText());
       stmt.setDouble(5, Double.parseDouble(tfPkgBasePrice.getText()));
       stmt.setDouble(6, Double.parseDouble(tfPkgAgencyCommission.getText()));
-     stmt.setString(7, tfImage.getText());
+    // stmt.setString(7, tfImage.getText());
 
 
 

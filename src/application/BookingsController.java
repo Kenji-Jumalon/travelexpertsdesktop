@@ -79,16 +79,17 @@ public class BookingsController {
     void OnActionBtnSave(ActionEvent event)throws SQLException {
 
         Connection conn = myConnection.createConnection();
-        String sql = "UPDATE `Bookings` SET `BookingId`=?, `BookingDate`=?, `BookingNo`=?, `CustomerId`=?,`TripTypeId`=?,  `PackageId`=?, `TravelerCount`=?,  WHERE `BookingId`= ?";
+        String sql = "UPDATE `Bookings` SET `BookingDate`=?, `BookingNo`=?, `CustomerId`=?,`TripTypeId`=?,  `PackageId`=?, `TravelerCount`=?  WHERE `BookingId`= ?";
         PreparedStatement stmt = conn.prepareStatement(sql);
 
-        stmt.setInt(1, Integer.parseInt(tfBookingId.getText()));
-        stmt.setDate(2, Date.valueOf(tfBookingDate.getText()));
-        stmt.setString(3, tfBookingNo.getText());
-        stmt.setInt(4, Integer.parseInt(tfCustomerId.getText()));
-        stmt.setString(5, tfTripTypeId.getText());
-        stmt.setInt(6,Integer.parseInt(tfPackageId.getText()));
-        stmt.setInt(7, Integer.parseInt(tfTravelerCount.getText()));
+        stmt.setInt(7, Integer.parseInt(tfBookingId.getText()));
+        stmt.setDate(1, Date.valueOf(tfBookingDate.getText()));
+        stmt.setString(2, tfBookingNo.getText());
+        stmt.setInt(3, Integer.parseInt(tfCustomerId.getText()));
+        stmt.setString(4, tfTripTypeId.getText());
+        stmt.setInt(5,Integer.parseInt(tfPackageId.getText()));
+        stmt.setInt(6, Integer.parseInt(tfTravelerCount.getText()));
+
         int rows = stmt.executeUpdate();
         conn.close();
         if (rows == 0) {
@@ -176,6 +177,8 @@ public class BookingsController {
 
 
             }
+
+            System.out.println(stmt);
 
 
 

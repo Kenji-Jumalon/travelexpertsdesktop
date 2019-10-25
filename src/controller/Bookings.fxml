@@ -14,10 +14,10 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="511.0" prefWidth="714.0" style="-fx-background-color: #72DDCD;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.BookingsController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="511.0" prefWidth="714.0" style="-fx-background-color: #0097A7;;" stylesheets="@../../palette.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.BookingsController">
 
     <children>
-      <Pane layoutX="35.0" layoutY="84.0" prefHeight="358.0" prefWidth="645.0" style="-fx-background-color: silver;">
+      <Pane layoutX="35.0" layoutY="84.0" prefHeight="358.0" prefWidth="645.0" style="-fx-background-color: silver; -fx-background-color: 607D8B;">
          <children>
               <Button fx:id="btnEdit" layoutX="286.0" layoutY="310.0" mnemonicParsing="false" onAction="#OnActionBtnEdit" prefHeight="25.0" prefWidth="51.0" text="Edit" />
               <Button fx:id="btnSave" layoutX="407.0" layoutY="310.0" mnemonicParsing="false" onAction="#OnActionBtnSave" prefHeight="25.0" prefWidth="51.0" text="Save" textAlignment="CENTER" />
@@ -44,40 +44,40 @@
         </menus>
       </MenuBar>
         <ComboBox fx:id="cbBookingId" layoutX="406.0" layoutY="37.0" prefHeight="25.0" prefWidth="189.0" />
-        <Label layoutX="267.0" layoutY="41.0" prefHeight="17.0" prefWidth="94.0" text="Booking ID:">
+        <Label layoutX="267.0" layoutY="41.0" prefHeight="17.0" prefWidth="94.0" style="-fx-font-weight: bold; -fx-text-fill: #970606;" text="Booking ID:">
          <font>
-            <Font size="14.0" />
+            <Font size="16.0" />
          </font></Label>
         <VBox layoutX="46.0" layoutY="136.0" prefHeight="207.0" prefWidth="189.0" spacing="10.0">
             <children>
-                <Label text="Booking ID:">
+                <Label style="-fx-font-weight: bold; -fx-text-fill: #970606;" text="Booking ID:">
                <font>
                   <Font size="14.0" />
                </font></Label>
-                <Label text="Booking Date:">
+                <Label style="-fx-font-weight: bold; -fx-text-fill: #970606;" text="Booking Date:">
                <font>
                   <Font size="14.0" />
                </font></Label>
-                <Label text="Booking Number:">
+                <Label style="-fx-font-weight: bold; -fx-text-fill: #970606;" text="Booking Number:">
                <font>
                   <Font size="14.0" />
                </font></Label>
-                <Label text="Customer ID:">
+                <Label style="-fx-font-weight: bold; -fx-text-fill: #970606;" text="Customer ID:">
                     <font>
                         <Font size="14.0" />
                     </font></Label>
-                <Label text="Trip Type Id:">
-                    <font>
-                        <Font size="14.0" />
-                    </font></Label>
-
-                <Label text="Package Id:">
+                <Label style="-fx-font-weight: bold; -fx-text-fill: #970606;" text="Trip Type ID:">
                     <font>
                         <Font size="14.0" />
                     </font></Label>
 
+                <Label style="-fx-font-weight: bold; -fx-text-fill: #970606;" text="Package ID:">
+                    <font>
+                        <Font size="14.0" />
+                    </font></Label>
 
-                <Label text="Traveler Count:">
+
+                <Label style="-fx-font-weight: bold; -fx-text-fill: #970606;" text="Traveler Count:">
                <font>
                   <Font size="14.0" />
                </font></Label>
@@ -87,15 +87,15 @@
                 <Insets bottom="10.0" left="20.0" right="10.0" top="20.0" />
             </padding>
         </VBox>
-        <VBox layoutX="246.0" layoutY="151.0" prefHeight="218.0" prefWidth="369.0">
+        <VBox layoutX="246.0" layoutY="146.0" prefHeight="223.0" prefWidth="369.0">
             <children>
-                <TextField fx:id="tfBookingId" prefHeight="34.0" prefWidth="295.0" />
+                <TextField fx:id="tfBookingId" prefHeight="30.0" prefWidth="364.0" />
                 <TextField fx:id="tfBookingDate" prefHeight="34.0" prefWidth="298.0" />
                 <TextField id="tfBookingNo" fx:id="tfBookingNo" prefHeight="32.0" prefWidth="212.0" />
                 <TextField fx:id="tfCustomerId" prefHeight="32.0" prefWidth="394.0" />
                 <TextField fx:id="tfTripTypeId" prefHeight="32.0" prefWidth="382.0" />
                 <TextField fx:id="tfPackageId" prefHeight="32.0" prefWidth="382.0" />
-                <TextField fx:id="tfTravelerCount" prefHeight="22.0" prefWidth="370.0" />
+                <TextField fx:id="tfTravelerCount" prefHeight="31.0" prefWidth="367.0" />
             </children>
         </VBox>
     </children>
